@@ -1,0 +1,253 @@
+---
+import Base from '../layouts/Base.astro';
+import Hero from '../components/Hero.astro';
+import StatPanel from '../components/StatPanel.astro';
+import Tile from '../components/Tile.astro';
+import CtaStrip from '../components/CtaStrip.astro';
+
+const stats = [
+  {
+    number: '$50K+',
+    caption: 'Coordination errors cost the average $1M project — caught on site, not on screen.',
+  },
+  {
+    number: '5–15%',
+    caption: 'Schedule loss on uncoordinated builds, eating margin and trust with the GC.',
+  },
+  {
+    number: 'Hours',
+    caption: 'From sketch to permit-ready plan with the IBE Toolbox — not weeks.',
+  },
+];
+
+const services = [
+  {
+    title: 'Engineering Services',
+    body: 'Fully coordinated HVAC, plumbing, and BIM scopes for AEC firms running real builds. Permit, for-construction, and fully-coordinated tiers — integrated build sets, not stacks of disconnected drawings.',
+    bullets: [
+      'BIM coordination & clash detection',
+      'Design estimating & cost validation',
+      'Revit-native deliverables',
+    ],
+    ctaHref: 'mailto:info@ibe.engineering?subject=Engineering%20services%20inquiry',
+    ctaLabel: 'Talk to our engineers',
+  },
+  {
+    title: 'IBE Toolbox',
+    body: 'The tools we built for ourselves to coordinate faster — now opened up. Sketch a floor plan, walk away with a 3D preview, framing plan, PDF set, and a Revit-ready bundle. Built for builders who want pro-grade outputs without becoming AI or Revit experts.',
+    bullets: [
+      'Floor Plan Builder — live today',
+      'Project Builder & PDF importer — coming',
+      'Same outputs we use on coordinated builds',
+    ],
+    ctaHref: 'https://toolbox.ibe.engineering',
+    ctaLabel: 'Open the Toolbox',
+  },
+  {
+    title: 'Custom Integrations',
+    body: 'Revit MCP plugins and project-specific automation, adapted to your workflow. Built by the same engineers who use these tools every day.',
+    bullets: [
+      'Revit MCP & plugin development',
+      'Submittal-to-family workflows',
+      'CONTAM modeling automation',
+    ],
+    ctaHref: 'mailto:info@ibe.engineering?subject=Custom%20integration%20inquiry',
+    ctaLabel: 'Tell us what you need',
+  },
+];
+
+const outcomes = [
+  {
+    title: 'Built by engineers, not by SaaS bros',
+    body: 'The same team that runs coordinated builds writes the tools. Every output is something we would put our seal on.',
+  },
+  {
+    title: 'Catch clashes on screen, not on site',
+    body: 'A coordinated 3D model means the steel guy and the duct guy already met — before either of them ordered material.',
+  },
+  {
+    title: 'Faster schedules, fewer surprises',
+    body: 'Up-front coordination compresses the back end of every job. RFIs drop. Change orders shrink.',
+  },
+  {
+    title: 'Revit-ready, every time',
+    body: 'Every export drops into Revit cleanly. Categories, levels, and naming match what your BIM team already expects.',
+  },
+  {
+    title: 'Permit-ready outputs in hours',
+    body: 'The Toolbox turns a sketch into a stamped-up plan set, framing layout, and Revit bundle — without the Revit learning curve.',
+  },
+  {
+    title: 'Share in our process improvements',
+    body: 'The Toolbox is the same internal tooling we built to speed up our own coordination. You get the efficiency gains without spending a thousand hours getting there.',
+  },
+];
+---
+
+<Base title="IBE — Integrated Building Engineering">
+  <Hero
+    eyebrow="Integrated building engineering"
+    headlineLead=""
+    underlinedWord="Coordinated"
+    headlineTail=" design and engineering — and the tools we built along the way."
+    sub="HVAC, plumbing, and BIM coordination for AEC firms running real builds. The IBE Toolbox is the set of tools we built for ourselves to move faster — now opened up to anyone who'd rather not spend a thousand hours learning Revit and AI workflows."
+    primaryHref="mailto:info@ibe.engineering?subject=Project%20inquiry"
+    primaryLabel="Talk to our engineers"
+    secondaryHref="https://toolbox.ibe.engineering"
+    secondaryLabel="Open the Toolbox"
+  />
+
+  <StatPanel
+    eyebrow="The cost of bad coordination"
+    heading="What gets caught early stays out of the schedule."
+    stats={stats}
+  />
+
+  <section class="section" id="services">
+    <div class="container">
+      <span class="eyebrow">What we do</span>
+      <h2 class="section__heading">Engineering services first. The tools we built along the way, second.</h2>
+      <p class="section__lead">
+        Coordinated design and engineering for AEC firms running real builds. The IBE Toolbox
+        is our internal tooling, opened up. Custom integrations for clients who want our
+        tooling adapted to their workflow.
+      </p>
+      <div class="grid-3">
+        {services.map((s) => (
+          <Tile
+            title={s.title}
+            body={s.body}
+            bullets={s.bullets}
+            ctaHref={s.ctaHref}
+            ctaLabel={s.ctaLabel}
+            variant="service"
+          />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--alt">
+    <div class="container">
+      <span class="eyebrow">Why it works</span>
+      <h2 class="section__heading">Outcomes our clients actually feel.</h2>
+      <div class="grid-3">
+        {outcomes.map((o) => (
+          <Tile title={o.title} body={o.body} variant="outcome" />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container founder">
+      <div class="founder__portrait" aria-hidden="true">
+        <!-- IMAGE: founder portrait — to replace -->
+        <span class="founder__portrait-label">Portrait</span>
+      </div>
+      <div class="founder__copy">
+        <span class="eyebrow">Founder</span>
+        <h2>Engineers first. Tool builders second.</h2>
+        <p>
+          IBE grew out of TRW Design — a small New Hampshire engineering firm running
+          coordinated HVAC and plumbing scopes for AEC clients. The Toolbox started as our own
+          internal tooling: the parts of coordination that should be automated, automated. We
+          opened it up because good engineering shouldn't be locked behind a thousand hours of
+          learning Revit and AI workflows.
+        </p>
+        <p>
+          We sit on the ASHRAE board and mentor the next generation of engineers through ACE
+          Mentor of New Hampshire. Then we go back to the office and keep building.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <CtaStrip
+    taglineLead="Plan "
+    taglineWord="Well."
+    taglineTail=" Build Well."
+    primaryHref="https://toolbox.ibe.engineering"
+    primaryLabel="Open the Toolbox"
+    secondaryHref="mailto:info@ibe.engineering?subject=Project%20inquiry"
+    secondaryLabel="Talk to our engineers"
+  />
+</Base>
+
+<style>
+  .section__heading {
+    margin-top: var(--s-2);
+    margin-bottom: var(--s-4);
+    max-width: 22ch;
+  }
+
+  .section__lead {
+    color: var(--color-ink-muted);
+    margin-bottom: var(--s-12);
+    max-width: 60ch;
+    font-size: var(--fs-h3);
+    line-height: var(--lh-snug);
+  }
+
+  .grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--s-6);
+  }
+
+  @media (max-width: 980px) {
+    .grid-3 {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .grid-3 {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .founder {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: var(--s-12);
+    align-items: start;
+  }
+
+  .founder__portrait {
+    aspect-ratio: 1 / 1;
+    background: var(--color-surface-alt);
+    border: 1px dashed var(--color-rule);
+    border-radius: var(--radius-md);
+    display: grid;
+    place-items: center;
+    color: var(--color-ink-muted);
+    font-size: var(--fs-small);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  .founder__copy {
+    display: grid;
+    gap: var(--s-4);
+  }
+
+  .founder__copy h2 {
+    max-width: 24ch;
+  }
+
+  .founder__copy p {
+    color: var(--color-ink-muted);
+    line-height: var(--lh-body);
+  }
+
+  @media (max-width: 760px) {
+    .founder {
+      grid-template-columns: 1fr;
+      gap: var(--s-6);
+    }
+    .founder__portrait {
+      max-width: 240px;
+    }
+  }
+</style>

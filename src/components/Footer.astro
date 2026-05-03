@@ -1,0 +1,128 @@
+---
+const year = new Date().getFullYear();
+---
+
+<footer class="site-footer">
+  <div class="container site-footer__inner">
+    <div class="site-footer__brand">
+      <img
+        src="/images/ibe_logo_horiz_white_red.png"
+        alt="IBE — Integrat3D Building Engineering"
+        width="180"
+        height="36"
+      />
+      <p class="site-footer__tag">Plan Well. Build Well.</p>
+    </div>
+
+    <div class="site-footer__contact">
+      <h3 class="site-footer__heading">Contact</h3>
+      <ul>
+        <li>
+          <a href="mailto:info@ibe.engineering?subject=Project%20inquiry">
+            info@ibe.engineering
+          </a>
+        </li>
+        <li>
+          <a href="tel:+16035212604">(603) 521-2604</a>
+        </li>
+        <li>Serving New Hampshire and the Northeast</li>
+      </ul>
+    </div>
+
+    <div class="site-footer__credibility">
+      <h3 class="site-footer__heading">Community</h3>
+      <ul>
+        <li>ASHRAE board member</li>
+        <li>ACE Mentor of New Hampshire</li>
+      </ul>
+    </div>
+
+    <div class="site-footer__legal">
+      <h3 class="site-footer__heading">Legal</h3>
+      <ul>
+        <li><a href="/privacy">Privacy</a></li>
+        <li><a href="/terms">Terms</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="container site-footer__copyright">
+    <p>&copy; {year} Integrated Building Engineering. All rights reserved.</p>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    background: var(--color-surface-dark);
+    color: rgba(255, 255, 255, 0.85);
+    padding-block: var(--s-16) var(--s-6);
+    margin-top: var(--s-24);
+  }
+
+  .site-footer__inner {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: var(--s-8);
+    padding-bottom: var(--s-12);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  }
+
+  .site-footer__brand img {
+    height: 36px;
+    width: auto;
+    margin-bottom: var(--s-4);
+  }
+
+  .site-footer__tag {
+    font-size: var(--fs-h3);
+    font-weight: var(--fw-bold);
+    color: var(--color-accent-ink);
+    line-height: var(--lh-snug);
+  }
+
+  .site-footer__heading {
+    font-size: var(--fs-small);
+    font-weight: var(--fw-bold);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-accent-ink);
+    margin-bottom: var(--s-3);
+  }
+
+  .site-footer ul {
+    list-style: none;
+    display: grid;
+    gap: var(--s-2);
+    font-size: var(--fs-small);
+  }
+
+  .site-footer a {
+    color: rgba(255, 255, 255, 0.85);
+    transition: color var(--transition-fast);
+  }
+
+  .site-footer a:hover {
+    color: var(--color-accent);
+  }
+
+  .site-footer__copyright {
+    padding-top: var(--s-6);
+    font-size: var(--fs-small);
+    color: rgba(255, 255, 255, 0.6);
+  }
+
+  @media (max-width: 760px) {
+    .site-footer__inner {
+      grid-template-columns: 1fr 1fr;
+    }
+    .site-footer__brand {
+      grid-column: 1 / -1;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .site-footer__inner {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

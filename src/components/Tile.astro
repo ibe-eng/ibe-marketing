@@ -1,0 +1,155 @@
+---
+interface Props {
+  title: string;
+  body: string;
+  /** Variant changes layout density. */
+  variant?: 'service' | 'tool' | 'outcome';
+  /** Optional pill (e.g., "Live", "Coming soon") */
+  status?: string;
+  /** Optional bullet list under the body. */
+  bullets?: string[];
+  /** Optional CTA. */
+  ctaHref?: string;
+  ctaLabel?: string;
+}
+
+const { title, body, variant = 'service', status, bullets, ctaHref, ctaLabel } = Astro.props;
+
+const statusClass = status
+  ? status.toLowerCase().includes('live')
+    ? 'pill--live'
+    : status.toLowerCase().includes('coming')
+      ? 'pill--soon'
+      : 'pill--later'
+  : '';
+---
+
+<article class:list={['tile', `tile--${variant}`]}>
+  <div class="tile__head">
+    <h3 class="tile__title">{title}</h3>
+    {status && <span class:list={['pill', statusClass]}>{status}</span>}
+  </div>
+  <p class="tile__body">{body}</p>
+  {bullets && (
+    <ul class="tile__bullets">
+      {bullets.map((b) => (
+        <li>{b}</li>
+      ))}
+    </ul>
+  )}
+  {ctaHref && ctaLabel && (
+    <a href={ctaHref} class="tile__cta" rel="noopener">
+      {ctaLabel} <span aria-hidden="true">→</span>
+    </a>
+  )}
+</article>
+
+<style>
+  .tile {
+    background: var(--color-bg);
+    border: 1px solid var(--color-rule);
+    border-radius: var(--radius-md);
+    padding: var(--s-6);
+    display: grid;
+    gap: var(--s-3);
+    align-content: start;
+    transition: border-color var(--transition-fast), transform var(--transition-fast);
+  }
+
+  .tile:hover {
+    border-color: var(--color-ink);
+  }
+
+  .tile--outcome {
+    background: var(--color-surface-alt);
+    border-color: transparent;
+    border-left: 3px solid var(--color-accent);
+    border-radius: 0 var(--radius-md) var(--radius-md) 0;
+    padding: var(--s-4) var(--s-6);
+  }
+
+  .tile--outcome:hover {
+    transform: translateX(2px);
+  }
+
+  .tile__head {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: var(--s-3);
+  }
+
+  .tile__title {
+    font-size: var(--fs-h3);
+    line-height: var(--lh-snug);
+  }
+
+  .tile__body {
+    color: var(--color-ink-muted);
+    line-height: var(--lh-snug);
+    max-width: none;
+  }
+
+  .tile__bullets {
+    list-style: none;
+    display: grid;
+    gap: var(--s-2);
+    font-size: var(--fs-small);
+    color: var(--color-ink);
+  }
+
+  .tile__bullets li {
+    padding-left: var(--s-4);
+    position: relative;
+  }
+
+  .tile__bullets li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.55em;
+    width: 8px;
+    height: 2px;
+    background: var(--color-accent);
+  }
+
+  .tile__cta {
+    margin-top: var(--s-2);
+    font-weight: var(--fw-medium);
+    color: var(--color-accent);
+    transition: gap var(--transition-fast);
+    display: inline-flex;
+    gap: var(--s-2);
+  }
+
+  .tile__cta:hover {
+    gap: var(--s-3);
+  }
+
+  .pill {
+    display: inline-flex;
+    align-items: center;
+    font-size: 0.75rem;
+    font-weight: var(--fw-medium);
+    padding: var(--s-1) var(--s-3);
+    border-radius: 999px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    white-space: nowrap;
+  }
+
+  .pill--live {
+    background: var(--color-accent);
+    color: var(--color-accent-ink);
+  }
+
+  .pill--soon {
+    background: var(--color-ink);
+    color: var(--color-accent-ink);
+  }
+
+  .pill--later {
+    background: var(--color-rule);
+    color: var(--color-ink-muted);
+  }
+</style>

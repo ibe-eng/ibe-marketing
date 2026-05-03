@@ -1,0 +1,72 @@
+---
+interface Stat {
+  number: string;
+  caption: string;
+}
+
+interface Props {
+  eyebrow?: string;
+  heading?: string;
+  stats: Stat[];
+}
+
+const { eyebrow, heading, stats } = Astro.props;
+---
+
+<section class="section section--alt stats">
+  <div class="container">
+    {eyebrow && <span class="eyebrow">{eyebrow}</span>}
+    {heading && <h2 class="stats__heading">{heading}</h2>}
+    <div class="stats__grid">
+      {stats.map((stat) => (
+        <div class="stats__item">
+          <div class="stats__number">{stat.number}</div>
+          <p class="stats__caption">{stat.caption}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .stats__heading {
+    margin-top: var(--s-2);
+    margin-bottom: var(--s-8);
+    max-width: 28ch;
+  }
+
+  .stats__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--s-8);
+  }
+
+  .stats__item {
+    display: grid;
+    gap: var(--s-3);
+    border-top: 3px solid var(--color-accent);
+    padding-top: var(--s-4);
+  }
+
+  .stats__number {
+    font-size: var(--fs-stat);
+    font-weight: var(--fw-bold);
+    color: var(--color-accent);
+    line-height: 1;
+    letter-spacing: -0.02em;
+  }
+
+  .stats__caption {
+    font-size: var(--fs-body);
+    color: var(--color-ink);
+    line-height: var(--lh-snug);
+    max-width: 30ch;
+  }
+
+  @media (max-width: 760px) {
+    .stats__grid {
+      grid-template-columns: 1fr;
+      gap: var(--s-6);
+    }
+  }
+</style>

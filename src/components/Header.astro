@@ -1,0 +1,147 @@
+---
+const navLinks = [
+  { href: '/#services', label: 'Services' },
+  { href: '/toolbox', label: 'Toolbox' },
+  { href: 'mailto:info@ibe.engineering?subject=Project%20inquiry', label: 'Contact' },
+];
+---
+
+<header class="site-header">
+  <div class="container site-header__inner">
+    <a href="/" class="site-header__brand" aria-label="IBE — Integrated Building Engineering home">
+      <img
+        src="/images/ibe_logo_horiz_white_red.png"
+        alt="IBE — Integrat3D Building Engineering"
+        width="220"
+        height="44"
+      />
+    </a>
+    <nav class="site-header__nav" aria-label="Primary">
+      <ul>
+        {navLinks.map((link) => (
+          <li>
+            <a href={link.href}>{link.label}</a>
+          </li>
+        ))}
+      </ul>
+    </nav>
+    <a
+      href="https://toolbox.ibe.engineering"
+      class="btn btn--primary site-header__cta"
+      rel="noopener"
+    >
+      Open Toolbox
+    </a>
+  </div>
+</header>
+
+<style>
+  .site-header {
+    background: var(--color-surface-dark);
+    color: var(--color-accent-ink);
+    position: sticky;
+    top: 0;
+    z-index: 50;
+  }
+
+  .site-header__inner {
+    display: flex;
+    align-items: center;
+    gap: var(--s-6);
+    padding-block: var(--s-3);
+  }
+
+  .site-header__brand {
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .site-header__brand img {
+    height: 36px;
+    width: auto;
+  }
+
+  .site-header__nav {
+    margin-left: auto;
+  }
+
+  .site-header__nav ul {
+    display: flex;
+    gap: var(--s-6);
+    list-style: none;
+  }
+
+  .site-header__nav a {
+    font-weight: var(--fw-medium);
+    font-size: var(--fs-small);
+    color: rgba(255, 255, 255, 0.85);
+    transition: color var(--transition-fast);
+  }
+
+  .site-header__nav a:hover {
+    color: var(--color-accent-ink);
+  }
+
+  .site-header__cta {
+    flex-shrink: 0;
+  }
+
+  /* Buttons (shared) */
+  :global(.btn) {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--s-2);
+    padding: var(--s-3) var(--s-6);
+    border-radius: var(--radius-md);
+    font-weight: var(--fw-medium);
+    font-size: var(--fs-small);
+    line-height: 1;
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: background var(--transition-fast), color var(--transition-fast),
+      border-color var(--transition-fast), transform var(--transition-fast);
+    text-decoration: none;
+  }
+
+  :global(.btn--primary) {
+    background: var(--color-accent);
+    color: var(--color-accent-ink);
+    border-color: var(--color-accent);
+  }
+
+  :global(.btn--primary:hover) {
+    background: #cc0000;
+    border-color: #cc0000;
+  }
+
+  :global(.btn--secondary) {
+    background: transparent;
+    color: var(--color-ink);
+    border-color: var(--color-ink);
+  }
+
+  :global(.btn--secondary:hover) {
+    background: var(--color-ink);
+    color: var(--color-accent-ink);
+  }
+
+  :global(.section--dark .btn--secondary) {
+    color: var(--color-accent-ink);
+    border-color: var(--color-accent-ink);
+  }
+
+  :global(.section--dark .btn--secondary:hover) {
+    background: var(--color-accent-ink);
+    color: var(--color-ink);
+  }
+
+  @media (max-width: 720px) {
+    .site-header__nav {
+      display: none;
+    }
+    .site-header__inner {
+      justify-content: space-between;
+    }
+  }
+</style>

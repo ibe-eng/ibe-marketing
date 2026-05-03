@@ -1,0 +1,41 @@
+---
+import Base from '../layouts/Base.astro';
+---
+
+<Base title="Privacy — IBE">
+  <section class="section">
+    <div class="container policy">
+      <span class="eyebrow">Privacy</span>
+      <h1>Privacy policy</h1>
+      <p>
+        Our full privacy policy is in progress. The short version: we don't sell your data, we
+        don't run third-party trackers on this site, and we only use the contact information
+        you give us to reply to you.
+      </p>
+      <p>
+        For questions about how we handle data tied to specific engagements, email
+        <a href="mailto:info@ibe.engineering">info@ibe.engineering</a>.
+      </p>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .policy {
+    max-width: 720px;
+    display: grid;
+    gap: var(--s-4);
+  }
+  .policy h1 {
+    font-size: var(--fs-h2);
+  }
+  .policy p {
+    color: var(--color-ink-muted);
+  }
+  .policy a {
+    color: var(--color-accent);
+  }
+  .policy a:hover {
+    text-decoration: underline;
+  }
+</style>

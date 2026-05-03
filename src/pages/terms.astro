@@ -1,0 +1,41 @@
+---
+import Base from '../layouts/Base.astro';
+---
+
+<Base title="Terms — IBE">
+  <section class="section">
+    <div class="container policy">
+      <span class="eyebrow">Terms</span>
+      <h1>Terms of service</h1>
+      <p>
+        Our full terms of service are in progress. Use of this site does not by itself create an
+        engagement with IBE — engagements are governed by the contract or proposal we sign with
+        you directly.
+      </p>
+      <p>
+        For questions, email
+        <a href="mailto:info@ibe.engineering">info@ibe.engineering</a>.
+      </p>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .policy {
+    max-width: 720px;
+    display: grid;
+    gap: var(--s-4);
+  }
+  .policy h1 {
+    font-size: var(--fs-h2);
+  }
+  .policy p {
+    color: var(--color-ink-muted);
+  }
+  .policy a {
+    color: var(--color-accent);
+  }
+  .policy a:hover {
+    text-decoration: underline;
+  }
+</style>
