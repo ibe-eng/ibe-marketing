@@ -172,7 +172,7 @@ Ask these in a single batch, then wait for answers before producing the PRD:
 ## Constraints / things to avoid
 
 - Do not introduce a JavaScript framework heavier than Astro.
-- Do not add analytics, cookie banners, or third-party widgets without asking.
+- PostHog analytics is wired in `src/layouts/Base.astro` (prod-only, cross-subdomain cookie on `.ibe.engineering` so the funnel into toolbox.ibe.engineering connects). Keys are repo secrets `PUBLIC_POSTHOG_KEY` / `PUBLIC_POSTHOG_HOST`. Don't add other analytics, cookie banners, or third-party widgets without asking.
 - Do not link to placeholder URLs that 404 — every link must either resolve or be a clearly labeled `# TODO` anchor.
 - Do not generate AI stock photos. Use clean SVG illustrations or labeled placeholder rectangles instead.
 - Keep this `CLAUDE.md` short. Detailed brand and design-token info goes in `docs/brand.md` and `docs/design-tokens.md` so this file stays cheap to read on every prompt.

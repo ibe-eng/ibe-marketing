@@ -31,6 +31,9 @@ jobs:
         run: npm ci || npm install
 
       - name: Build
+        env:
+          PUBLIC_POSTHOG_KEY: ${{ secrets.PUBLIC_POSTHOG_KEY }}
+          PUBLIC_POSTHOG_HOST: ${{ secrets.PUBLIC_POSTHOG_HOST }}
         run: npm run build
 
       - name: Upload Pages artifact
