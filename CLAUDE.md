@@ -7,7 +7,7 @@
 A small, fast marketing website for **Integrated Building Engineering (IBE)** at the domain `ibe.engineering`. Replaces the existing `trw-design.com` site (built on B12) with a leaner, faster, GitHub-Pages-hosted site that points visitors to two things:
 
 1. The engineering services IBE offers (the core of what TRW Design has been doing).
-2. **IBE Toolbox** — a paid hub of professional building-design tools at `toolbox.ibe.engineering`. Floor Plan Builder is the first tool live; more land over time (Project Builder, PDF importer, CONTAM, Revit submittal automation).
+2. **IBE Toolbox** — a paid hub of professional building-design tools at `toolbox.ibe.engineering`. **Integrat3D Studio** (the floor-plan + framing + 3D editor) is the first tool live; more land over time (Project Builder, PDF importer, CONTAM, Revit submittal automation).
 
 Scope is intentionally tight: **one or two pages**. Everything dynamic (logins, paid tools, user projects, the Toolbox itself) lives on the `toolbox.ibe.engineering` subdomain — do not build any of that here.
 
@@ -122,7 +122,7 @@ Drop this page if everything fits on the home page. If kept, this is a brochure 
 1. Header (same).
 2. Hero: "**IBE Toolbox** — pro-grade building tools, on demand. For AEC firms and small-scale builders alike."
 3. **Tool tiles** — one per tool:
-   - **Floor Plan Builder** (live) — sketch a floor plan, get 3D preview, framing plan, PDF set, and a Revit-ready bundle.
+   - **Integrat3D Studio** (live) — sketch a floor plan, get 3D preview, framing plan, PDF set, and a Revit-ready bundle.
    - **Project Builder** (coming soon) — set up structured projects that other tools attach to.
    - **PDF Floor Plan Importer** (coming soon) — drop in an existing PDF, get a parsed model back.
    - **CONTAM Automation** (later) — smoke-control modeling for high-rise residential.
@@ -154,20 +154,8 @@ Drop this page if everything fits on the home page. If kept, this is a brochure 
 - **GitHub org:** `ibe-eng`. Repo will be `github.com/ibe-eng/ibe-marketing`.
 - **DNS:** Tyler has registrar credentials for `ibe.engineering`. After deploy, give him the exact DNS records to add (GH Pages apex A/AAAA records, plus a separate `toolbox` CNAME pointing at Vercel for the IBE Toolbox subdomain).
 - **Logo:** Tyler has an IBE logo file ready. Ask him for the file path before the first build, then drop it into `public/images/`. SVG preferred; PNG/JPG acceptable. Use it in the header and as the basis for the favicon.
-- **Hub name:** the paid hub at `toolbox.ibe.engineering` is branded **IBE Toolbox**. CTAs across the marketing site say "Open Toolbox" or "Open the Toolbox" — never "Launch the app", "Sign in", or "Floor Plan Builder" (Floor Plan Builder is one tool inside the Toolbox, not the product).
+- **Hub name:** the paid hub at `toolbox.ibe.engineering` is branded **IBE Toolbox**. CTAs across the marketing site say "Open Toolbox" or "Open the Toolbox" — never "Launch the app", "Sign in", or "Integrat3D Studio" (Integrat3D Studio is one tool inside the Toolbox, not the product). Note: the first tool was originally called "Floor Plan Builder"; renamed to **Integrat3D Studio** on 2026-05-03.
 - **Audience:** pros first, but explicitly welcome small-scale builders / DIY-pros. Copy should not assume the reader is an engineer.
-
-## Alignment questions Claude Code should ask before generating
-
-Ask these in a single batch, then wait for answers before producing the PRD:
-
-1. Astro vs. plain HTML/CSS — strong preference?
-2. One page or two? (If two, what goes on `/toolbox` vs the home page hero block?)
-3. Photography direction: do you have real BIM/Revit screenshots ready, or should we ship with empty placeholder boxes labeled by intent (e.g., "isometric render — pipe coordination")?
-4. Form handling: `mailto:` link, Formspree, or no form at all (just email + phone)?
-5. Social links to include in the footer? (LinkedIn? GitHub `ibe-eng` org?)
-6. Should the footer credibility line ("ASHRAE board, ACE Mentor of NH") survive the move, or is that being de-emphasized for IBE?
-7. Confirm the domain is the apex `ibe.engineering` (no `www.` redirect needed).
 
 ## Constraints / things to avoid
 
