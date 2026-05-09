@@ -12,7 +12,7 @@
 
 Integrated Building Engineering (IBE) replaces TRW Design. The new site has to do two jobs the current trw-design.com B12 build does not:
 
-1. Position IBE as **services + product** — the same engineering team now sells engineering work *and* a paid hub of pro-grade self-serve tools at `app.ibe.engineering` (the **IBE Toolbox**).
+1. Position IBE as **services + product** — the same engineering team now sells engineering work *and* a paid hub of pro-grade self-serve tools at `toolbox.ibe.engineering` (the **IBE Toolbox**).
 2. Welcome a second audience — small-scale builders, remodelers, kitchen-and-bath designers, DIY-pros — without alienating the AEC firms who are still the core services buyer.
 
 The cost of getting this wrong: services leads dry up if the site reads as a SaaS product page; Toolbox sign-ups stall if the site reads as a boutique consultancy. The site has to do both, on one screen, in two CTAs.
@@ -31,7 +31,7 @@ The cost of getting this wrong: services leads dry up if the site reads as a Saa
 
 | # | Non-goal | Why |
 |---|---|---|
-| NG1 | User accounts, login, or any auth UI | Lives on `app.ibe.engineering`, separate repo |
+| NG1 | User accounts, login, or any auth UI | Lives on `toolbox.ibe.engineering`, separate repo |
 | NG2 | Pricing page or billing of any kind | Toolbox pricing is unsettled; premature to publish |
 | NG3 | Blog, case studies, CMS | No content velocity to justify the surface area |
 | NG4 | Custom contact form with backend | GitHub Pages is static; `mailto:` is enough until volume justifies more |
@@ -224,7 +224,7 @@ ibe-marketing/
 - **R6** Design tokens file loaded once via `Base.astro`.
 - **R7** Red oval underline rendered as inline SVG, sits behind the operative word in the hero.
 - **R8** Logo files referenced from `public/images/` (white-red horiz on black header, black-red horiz wherever a light bg hosts the logo).
-- **R9** Header CTA "Open Toolbox" links to `https://app.ibe.engineering`.
+- **R9** Header CTA "Open Toolbox" links to `https://toolbox.ibe.engineering`.
 - **R10** Secondary CTA "Talk to our engineers" is a `mailto:info@ibe.engineering` link with a sensible default subject (`?subject=Project%20inquiry`).
 - **R11** Phone number `(603) 521-2604` is a `tel:` link in the footer.
 - **R12** Footer includes credibility line: "ASHRAE board member · ACE Mentor of New Hampshire".
@@ -256,7 +256,7 @@ ibe-marketing/
 **Functional**
 - [ ] Both pages render with no console errors at `localhost:4321`.
 - [ ] Every nav link resolves (Services anchor on `/`, `/toolbox`, Contact = mailto).
-- [ ] "Open Toolbox" buttons (header + hero + closing strip) all link to `https://app.ibe.engineering`.
+- [ ] "Open Toolbox" buttons (header + hero + closing strip) all link to `https://toolbox.ibe.engineering`.
 - [ ] "Talk to our engineers" CTA opens default mail client with `info@ibe.engineering` and a prefilled subject.
 - [ ] Footer email/phone are real links, not plain text.
 - [ ] Logo renders correctly in header (white-red on black) and at correct aspect ratio.
