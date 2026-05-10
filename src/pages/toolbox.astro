@@ -25,55 +25,48 @@ const tools = [
     status: 'Coming soon',
     body: 'Drop in an existing PDF set and get a parsed model back — walls, doors, dimensions, room labels, ready to refine in Integrat3D Studio.',
   },
-  {
-    title: 'CONTAM Automation',
-    status: 'On the roadmap',
-    body: 'Smoke-control modeling for high-rise residential. The boring half of code compliance, automated.',
-  },
-  {
-    title: 'Submittal-to-Family',
-    status: 'On the roadmap',
-    body: 'Manufacturer PDF in, Revit family out. Stop hand-modeling the same VAV box for the fifth time this month.',
-  },
 ];
 
-const steps = [
+const faq = [
   {
-    n: '01',
-    title: 'Sign in',
-    body: 'Open toolbox.ibe.engineering and sign in. Account creation takes a minute.',
+    q: 'Does the Toolbox replace an engineer?',
+    a: 'No. The Toolbox speeds up modeling, coordination, and early-stage deliverables. Engineering judgment, code review, and stamped documents still require qualified professionals.',
   },
   {
-    n: '02',
-    title: 'Start a project',
-    body: 'Pick a tool, set up your project shell, and start working. Tools share the same project data.',
+    q: 'What outputs does Integrat3D Studio generate?',
+    a: 'Integrat3D Studio generates floor plans, framing layouts, PDF exports, 3D previews, and Revit-ready bundles.',
   },
   {
-    n: '03',
-    title: 'Export and ship',
-    body: 'Pull a PDF set, a Revit bundle, or a 3D preview link. Use it in your sales call, your permit set, or your BIM model.',
+    q: 'Who is the Toolbox for?',
+    a: 'The Toolbox is built for AEC firms, remodelers, builders, estimators, and designers who need faster building-design workflows without living inside Revit full time.',
+  },
+  {
+    q: 'Can I export to Revit?',
+    a: 'Yes. The Toolbox is designed around Revit-native workflows and exports.',
   },
 ];
 ---
 
 <Base
-  title="IBE Toolbox — pro-grade building tools, on demand"
-  description="The IBE Toolbox is a paid hub of building-design tools for AEC firms and small-scale builders. Integrat3D Studio is live; more tools are landing."
+  title="IBE Toolbox | Building design and Revit export tools"
+  description="Sketch floor plans, generate framing layouts, preview buildings in 3D, and export Revit-ready building packages with the IBE Toolbox."
 >
   <Hero
     eyebrow="The IBE Toolbox"
     headlineLead="Pro-grade building tools, "
     underlinedWord="on demand."
     headlineTail=""
-    sub="For AEC firms running coordinated builds and for small-scale builders, remodelers, and designers who need permit-ready outputs without a full design team."
-    primaryHref="https://toolbox.ibe.engineering"
-    primaryLabel="Open the Toolbox"
+    sub="Browser-based building-design workflows for AEC firms, remodelers, and builders. Sketch floor plans, preview designs in 3D, and export Revit-ready deliverables."
+    primaryHref="https://toolbox.ibe.engineering/toolbox"
+    primaryLabel="Login"
+    secondaryHref="https://toolbox.ibe.engineering/sign-up"
+    secondaryLabel="Create account"
   />
 
   <section class="section section--alt">
     <div class="container">
       <span class="eyebrow">What's inside</span>
-      <h2 class="section__heading">One hub. More tools landing as we prove them in our own workflow.</h2>
+      <h2 class="section__heading">Built from real coordination workflows.</h2>
       <div class="tools-grid">
         {tools.map((t) => (
           <Tile
@@ -89,40 +82,17 @@ const steps = [
   </section>
 
   <section class="section">
-    <div class="container">
-      <span class="eyebrow">How it works</span>
-      <h2 class="section__heading">Three steps from sketch to shipped.</h2>
-      <ol class="steps">
-        {steps.map((s) => (
-          <li class="steps__item">
-            <span class="steps__num">{s.n}</span>
-            <h3>{s.title}</h3>
-            <p>{s.body}</p>
-          </li>
-        ))}
-      </ol>
-    </div>
-  </section>
+    <div class="container faq">
+      <span class="eyebrow">Toolbox FAQ</span>
+      <h2 class="section__heading">Questions about the software.</h2>
 
-  <section class="section section--alt">
-    <div class="container pricing">
-      <span class="eyebrow">Pricing</span>
-      <h2 class="section__heading">Pay per export, per project, or by subscription.</h2>
-      <p class="pricing__lead">
-        We're finalizing pricing as more tools come online. Open the Toolbox to see current
-        options — Integrat3D Studio is live now, and early Toolbox users help shape what gets
-        built next.
-      </p>
-      <div class="pricing__ctas">
-        <a href="https://toolbox.ibe.engineering" class="btn btn--primary" rel="noopener">
-          Open the Toolbox
-        </a>
-        <a
-          href="mailto:info@ibe.engineering?subject=Toolbox%20question"
-          class="btn btn--secondary"
-        >
-          Ask us anything
-        </a>
+      <div class="faq-grid">
+        {faq.map((item) => (
+          <article class="faq-item">
+            <h3>{item.q}</h3>
+            <p>{item.a}</p>
+          </article>
+        ))}
       </div>
     </div>
   </section>
@@ -131,8 +101,10 @@ const steps = [
     taglineLead="Pro-grade. "
     taglineWord="On demand."
     taglineTail=""
-    primaryHref="https://toolbox.ibe.engineering"
-    primaryLabel="Open the Toolbox"
+    primaryHref="https://toolbox.ibe.engineering/toolbox"
+    primaryLabel="Login"
+    secondaryHref="https://toolbox.ibe.engineering/sign-up"
+    secondaryLabel="Create account"
   />
 </Base>
 
@@ -149,79 +121,33 @@ const steps = [
     gap: var(--s-6);
   }
 
-  /* The 4th and 5th tiles span half each on the second row */
-  .tools-grid > :nth-child(4),
-  .tools-grid > :nth-child(5) {
-    grid-column: span 1;
+  .faq-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--s-6);
+  }
+
+  .faq-item {
+    padding: var(--s-6);
+    border: 1px solid var(--color-rule);
+    border-radius: var(--radius-md);
+    background: var(--color-surface-alt);
+  }
+
+  .faq-item h3 {
+    margin-bottom: var(--s-3);
+    font-size: var(--fs-h3);
+  }
+
+  .faq-item p {
+    color: var(--color-ink-muted);
+    line-height: var(--lh-body);
   }
 
   @media (max-width: 980px) {
-    .tools-grid {
-      grid-template-columns: 1fr 1fr;
-    }
-  }
-
-  @media (max-width: 640px) {
-    .tools-grid {
+    .tools-grid,
+    .faq-grid {
       grid-template-columns: 1fr;
     }
-  }
-
-  .steps {
-    list-style: none;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: var(--s-8);
-    counter-reset: step;
-  }
-
-  .steps__item {
-    display: grid;
-    gap: var(--s-3);
-    border-top: 3px solid var(--color-accent);
-    padding-top: var(--s-4);
-  }
-
-  .steps__num {
-    font-family: var(--font-sans);
-    font-weight: var(--fw-bold);
-    font-size: var(--fs-small);
-    color: var(--color-accent);
-    letter-spacing: 0.1em;
-  }
-
-  .steps__item h3 {
-    font-size: var(--fs-h3);
-  }
-
-  .steps__item p {
-    color: var(--color-ink-muted);
-    line-height: var(--lh-snug);
-  }
-
-  @media (max-width: 760px) {
-    .steps {
-      grid-template-columns: 1fr;
-      gap: var(--s-6);
-    }
-  }
-
-  .pricing__lead {
-    font-size: var(--fs-h3);
-    color: var(--color-ink-muted);
-    line-height: var(--lh-snug);
-    max-width: 56ch;
-    margin-bottom: var(--s-8);
-  }
-
-  .pricing__ctas {
-    display: flex;
-    flex-wrap: wrap;
-    gap: var(--s-3);
-  }
-
-  .pricing__ctas .btn {
-    padding: var(--s-4) var(--s-6);
-    font-size: var(--fs-body);
   }
 </style>
