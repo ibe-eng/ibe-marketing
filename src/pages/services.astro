@@ -3,22 +3,31 @@ import Base from '../layouts/Base.astro';
 import Hero from '../components/Hero.astro';
 import CtaStrip from '../components/CtaStrip.astro';
 
-const services = [
+const designServices = [
+  'Permit-ready design sets',
+  'For-construction coordinated sets',
+  'Fully coordinated BIM/Revit workflows',
   'HVAC design',
   'Plumbing design',
+  'Revit-native deliverables',
+];
+
+const coordinationServices = [
+  'Single-trade coordination',
+  'Overall project coordination management',
   'BIM coordination',
-  'Trade coordination',
-  'General coordination',
-  'Permit-ready drawing sets',
-  'For-construction coordinated sets',
-  'Revit modeling',
-  'Clash detection',
+  'Clash detection and resolution',
+  'Construction coordination support',
+  'Design-assist coordination workflows',
+];
+
+const extendedServices = [
+  'Early-stage estimating support',
   'Fabrication coordination and spooling support',
   'Digital twins and model environments',
   'Augmented reality field workflows',
-  'Construction coordination support',
-  'Design-assist workflows',
   'Material takeoffs and workflow automation',
+  'Constructability-focused workflow optimization',
 ];
 ---
 
@@ -70,16 +79,31 @@ const services = [
   </section>
 
   <section class="section">
-    <div class="container">
+    <div class="container grouped-services">
       <span class="eyebrow">Services</span>
       <h2 class="section__heading">Coordinated engineering and workflow support.</h2>
 
-      <div class="services-grid">
-        {services.map((service) => (
-          <article class="service-card">
-            <h3>{service}</h3>
-          </article>
-        ))}
+      <div class="service-group-grid">
+        <article class="service-group">
+          <h3>Design</h3>
+          <ul>
+            {designServices.map((service) => <li>{service}</li>)}
+          </ul>
+        </article>
+
+        <article class="service-group">
+          <h3>Coordination</h3>
+          <ul>
+            {coordinationServices.map((service) => <li>{service}</li>)}
+          </ul>
+        </article>
+
+        <article class="service-group">
+          <h3>Extended services</h3>
+          <ul>
+            {extendedServices.map((service) => <li>{service}</li>)}
+          </ul>
+        </article>
       </div>
     </div>
   </section>
@@ -114,62 +138,30 @@ const services = [
   <section class="section">
     <div class="container pricing-grid">
       <div>
-        <span class="eyebrow">Pricing philosophy</span>
-        <h2>Built to cost less than manual workflows.</h2>
+        <span class="eyebrow">Engineering philosophy</span>
+        <h2>Well-coordinated projects create measurable field value.</h2>
       </div>
 
       <div>
         <p>
-          The Toolbox is designed around a simple principle: software-assisted workflows should
-          cost dramatically less than traditional manual engineering effort.
+          IBE primarily works through fixed-fee coordination and engineering workflows focused
+          on reducing friction during installation and construction.
         </p>
 
         <p>
-          Most workflows target roughly 15%–30% of traditional manual engineering costs while
-          still allowing time for review, validation, and coordination.
+          Our philosophy is simple: coordinated documentation and constructability-focused
+          workflows should improve field execution substantially more than the coordination cost itself.
         </p>
 
-        <ul>
-          <li>Free to create and review projects</li>
-          <li>Pay only when unlocking professional outputs</li>
-          <li>No bloated subscriptions</li>
-          <li>One-time per-project unlocks</li>
-          <li>Continue revising projects after unlock</li>
-          <li>Designed for real AEC workflows, not software lock-in</li>
-        </ul>
-      </div>
-    </div>
-  </section>
+        <p>
+          Better documentation, better coordination, and better constructability planning reduce
+          downstream revisions, confusion, delays, and install inefficiencies across the project lifecycle.
+        </p>
 
-  <section class="section section--alt">
-    <div class="container workflow-grid">
-      <span class="eyebrow">How projects work</span>
-      <h2 class="section__heading">Simple project-based workflows.</h2>
-
-      <div class="workflow-steps">
-        <article>
-          <strong>1</strong>
-          <h3>Create project</h3>
-          <p>Start building and reviewing outputs immediately.</p>
-        </article>
-
-        <article>
-          <strong>2</strong>
-          <h3>Review outputs</h3>
-          <p>Preview layouts, models, coordination, and generated deliverables.</p>
-        </article>
-
-        <article>
-          <strong>3</strong>
-          <h3>Unlock professional features</h3>
-          <p>Export Revit-ready workflows, permit sets, takeoffs, and deliverables.</p>
-        </article>
-
-        <article>
-          <strong>4</strong>
-          <h3>Continue iterating</h3>
-          <p>Make revisions and updates without restarting the workflow.</p>
-        </article>
+        <p>
+          The Toolbox extends those same workflow philosophies externally through project-based,
+          no-subscription software workflows designed for real AEC teams.
+        </p>
       </div>
     </div>
   </section>
@@ -187,22 +179,14 @@ const services = [
 
 <style>
   .philosophy-grid,
-  .services-grid,
-  .workflow-steps {
+  .service-group-grid {
     display: grid;
     gap: var(--s-6);
   }
 
-  .philosophy-grid {
+  .philosophy-grid,
+  .service-group-grid {
     grid-template-columns: repeat(3, 1fr);
-  }
-
-  .services-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-  .workflow-steps {
-    grid-template-columns: repeat(4, 1fr);
   }
 
   .section__heading {
@@ -211,13 +195,23 @@ const services = [
     max-width: 28ch;
   }
 
-  .service-card,
-  .workflow-steps article,
+  .service-group,
   .philosophy-grid article {
     border: 1px solid var(--color-rule);
     border-radius: var(--radius-md);
     padding: var(--s-6);
     background: white;
+  }
+
+  .service-group h3 {
+    margin-bottom: var(--s-5);
+  }
+
+  .service-group ul {
+    display: grid;
+    gap: var(--s-3);
+    padding-left: 1.1rem;
+    color: var(--color-ink-muted);
   }
 
   .narrative-grid,
@@ -234,28 +228,9 @@ const services = [
     gap: var(--s-5);
   }
 
-  .pricing-grid ul {
-    display: grid;
-    gap: var(--s-3);
-    padding-left: 1.25rem;
-  }
-
-  .workflow-steps strong {
-    display: inline-flex;
-    width: 2rem;
-    height: 2rem;
-    border-radius: 999px;
-    align-items: center;
-    justify-content: center;
-    background: var(--color-accent);
-    color: white;
-    margin-bottom: var(--s-4);
-  }
-
   @media (max-width: 980px) {
     .philosophy-grid,
-    .services-grid,
-    .workflow-steps,
+    .service-group-grid,
     .narrative-grid,
     .pricing-grid {
       grid-template-columns: 1fr;
