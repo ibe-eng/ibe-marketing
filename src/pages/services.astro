@@ -1,0 +1,264 @@
+---
+import Base from '../layouts/Base.astro';
+import Hero from '../components/Hero.astro';
+import CtaStrip from '../components/CtaStrip.astro';
+
+const services = [
+  'HVAC design',
+  'Plumbing design',
+  'BIM coordination',
+  'Trade coordination',
+  'General coordination',
+  'Permit-ready drawing sets',
+  'For-construction coordinated sets',
+  'Revit modeling',
+  'Clash detection',
+  'Fabrication coordination and spooling support',
+  'Digital twins and model environments',
+  'Augmented reality field workflows',
+  'Construction coordination support',
+  'Design-assist workflows',
+  'Material takeoffs and workflow automation',
+];
+---
+
+<Base
+  title="IBE Services | Coordinated engineering and BIM workflows"
+  description="Coordinated HVAC, plumbing, BIM, Revit, fabrication, and constructability-focused engineering workflows built around field installation efficiency."
+>
+  <Hero
+    eyebrow="Coordinated engineering services"
+    headlineLead="Engineering designed for "
+    underlinedWord="installability."
+    headlineTail=""
+    sub="IBE provides HVAC design, plumbing design, BIM coordination, and Revit-native workflows built around one goal: making projects easier to coordinate, easier to build, and easier to revise in the field."
+    primaryHref="mailto:info@ibe.engineering?subject=Engineering%20services%20inquiry"
+    primaryLabel="Talk to our engineers"
+    secondaryHref="/downloads/IBE-capabilities-sheet.pdf"
+    secondaryLabel="Download capabilities sheet"
+  />
+
+  <section class="section section--alt">
+    <div class="container philosophy-grid">
+      <article>
+        <span class="eyebrow">Coordination-first</span>
+        <h2>Built around reducing friction in the field.</h2>
+        <p>
+          Every workflow is designed to reduce clashes, revisions, RFIs, install confusion,
+          and coordination breakdowns before crews ever arrive onsite.
+        </p>
+      </article>
+
+      <article>
+        <span class="eyebrow">Revit-native</span>
+        <h2>Connected models and coordinated deliverables.</h2>
+        <p>
+          We structure models, layouts, exports, and coordination sets around real-world
+          workflows used by engineers, contractors, and coordination teams.
+        </p>
+      </article>
+
+      <article>
+        <span class="eyebrow">Field-oriented</span>
+        <h2>Focused on constructability and installability.</h2>
+        <p>
+          We optimize for sequencing, installation practicality, fabrication coordination,
+          and reducing downstream field conflicts.
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <span class="eyebrow">Services</span>
+      <h2 class="section__heading">Coordinated engineering and workflow support.</h2>
+
+      <div class="services-grid">
+        {services.map((service) => (
+          <article class="service-card">
+            <h3>{service}</h3>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--dark">
+    <div class="container narrative-grid">
+      <div>
+        <span class="eyebrow">Why the Toolbox exists</span>
+        <h2>The software came from solving real coordination problems.</h2>
+      </div>
+
+      <div class="narrative-copy">
+        <p>
+          The IBE Toolbox started as internal infrastructure developed to speed up repetitive
+          coordination workflows inside real engineering projects.
+        </p>
+
+        <p>
+          Over time, those systems became reliable enough to expose externally. Customers now
+          get the benefit of AI-assisted workflows, coordinated automation, and custom software
+          without spending thousands of development hours building the systems themselves.
+        </p>
+
+        <p>
+          The goal is not to replace engineering judgment. The goal is to reduce repetitive
+          manual workflow time while improving coordination quality and field usability.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container pricing-grid">
+      <div>
+        <span class="eyebrow">Pricing philosophy</span>
+        <h2>Built to cost less than manual workflows.</h2>
+      </div>
+
+      <div>
+        <p>
+          The Toolbox is designed around a simple principle: software-assisted workflows should
+          cost dramatically less than traditional manual engineering effort.
+        </p>
+
+        <p>
+          Most workflows target roughly 15%–30% of traditional manual engineering costs while
+          still allowing time for review, validation, and coordination.
+        </p>
+
+        <ul>
+          <li>Free to create and review projects</li>
+          <li>Pay only when unlocking professional outputs</li>
+          <li>No bloated subscriptions</li>
+          <li>One-time per-project unlocks</li>
+          <li>Continue revising projects after unlock</li>
+          <li>Designed for real AEC workflows, not software lock-in</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--alt">
+    <div class="container workflow-grid">
+      <span class="eyebrow">How projects work</span>
+      <h2 class="section__heading">Simple project-based workflows.</h2>
+
+      <div class="workflow-steps">
+        <article>
+          <strong>1</strong>
+          <h3>Create project</h3>
+          <p>Start building and reviewing outputs immediately.</p>
+        </article>
+
+        <article>
+          <strong>2</strong>
+          <h3>Review outputs</h3>
+          <p>Preview layouts, models, coordination, and generated deliverables.</p>
+        </article>
+
+        <article>
+          <strong>3</strong>
+          <h3>Unlock professional features</h3>
+          <p>Export Revit-ready workflows, permit sets, takeoffs, and deliverables.</p>
+        </article>
+
+        <article>
+          <strong>4</strong>
+          <h3>Continue iterating</h3>
+          <p>Make revisions and updates without restarting the workflow.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <CtaStrip
+    taglineLead="Coordinated "
+    taglineWord="workflows."
+    taglineTail=" Better projects in the field."
+    primaryHref="mailto:info@ibe.engineering?subject=Engineering%20services%20inquiry"
+    primaryLabel="Talk to our engineers"
+    secondaryHref="/toolbox"
+    secondaryLabel="Explore the Toolbox"
+  />
+</Base>
+
+<style>
+  .philosophy-grid,
+  .services-grid,
+  .workflow-steps {
+    display: grid;
+    gap: var(--s-6);
+  }
+
+  .philosophy-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .services-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .workflow-steps {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .section__heading {
+    margin-top: var(--s-2);
+    margin-bottom: var(--s-8);
+    max-width: 28ch;
+  }
+
+  .service-card,
+  .workflow-steps article,
+  .philosophy-grid article {
+    border: 1px solid var(--color-rule);
+    border-radius: var(--radius-md);
+    padding: var(--s-6);
+    background: white;
+  }
+
+  .narrative-grid,
+  .pricing-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: var(--s-10);
+    align-items: start;
+  }
+
+  .narrative-copy,
+  .pricing-grid div:last-child {
+    display: grid;
+    gap: var(--s-5);
+  }
+
+  .pricing-grid ul {
+    display: grid;
+    gap: var(--s-3);
+    padding-left: 1.25rem;
+  }
+
+  .workflow-steps strong {
+    display: inline-flex;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 999px;
+    align-items: center;
+    justify-content: center;
+    background: var(--color-accent);
+    color: white;
+    margin-bottom: var(--s-4);
+  }
+
+  @media (max-width: 980px) {
+    .philosophy-grid,
+    .services-grid,
+    .workflow-steps,
+    .narrative-grid,
+    .pricing-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
