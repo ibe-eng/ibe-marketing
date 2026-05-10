@@ -32,6 +32,16 @@ const navLinks = [
     >
       Login
     </a>
+
+    <details class="site-header__mobile-menu">
+      <summary>Menu</summary>
+      <nav aria-label="Mobile primary">
+        {navLinks.map((link) => (
+          <a href={link.href}>{link.label}</a>
+        ))}
+        <a href="https://toolbox.ibe.engineering/toolbox" rel="noopener">Login</a>
+      </nav>
+    </details>
   </div>
 </header>
 
@@ -86,6 +96,47 @@ const navLinks = [
     flex-shrink: 0;
   }
 
+  .site-header__mobile-menu {
+    display: none;
+    position: relative;
+    margin-left: auto;
+  }
+
+  .site-header__mobile-menu summary {
+    list-style: none;
+    cursor: pointer;
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    border-radius: var(--radius-md);
+    padding: var(--s-3) var(--s-4);
+    font-size: var(--fs-small);
+    font-weight: var(--fw-medium);
+  }
+
+  .site-header__mobile-menu summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .site-header__mobile-menu nav {
+    position: absolute;
+    right: 0;
+    top: calc(100% + var(--s-2));
+    display: grid;
+    min-width: 180px;
+    padding: var(--s-3);
+    border-radius: var(--radius-md);
+    background: var(--color-surface-dark);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+  }
+
+  .site-header__mobile-menu nav a {
+    padding: var(--s-3);
+    color: white;
+    font-size: var(--fs-small);
+    font-weight: var(--fw-medium);
+  }
+
   /* Buttons (shared) */
   :global(.btn) {
     display: inline-flex;
@@ -137,11 +188,16 @@ const navLinks = [
   }
 
   @media (max-width: 720px) {
-    .site-header__nav {
+    .site-header__nav,
+    .site-header__cta {
       display: none;
+    }
+    .site-header__mobile-menu {
+      display: block;
     }
     .site-header__inner {
       justify-content: space-between;
+      gap: var(--s-3);
     }
   }
 </style>
