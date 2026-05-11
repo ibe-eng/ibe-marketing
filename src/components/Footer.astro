@@ -56,7 +56,7 @@ const year = new Date().getFullYear();
     background: var(--color-surface-dark);
     color: rgba(255, 255, 255, 0.85);
     padding-block: var(--s-16) var(--s-6);
-    margin-top: var(--s-24);
+    margin-top: 0;
   }
 
   .site-footer__inner {
@@ -112,6 +112,10 @@ const year = new Date().getFullYear();
   }
 
   @media (max-width: 760px) {
+    .site-footer {
+      padding-block: var(--s-12) calc(var(--s-8) + env(safe-area-inset-bottom));
+    }
+
     .site-footer__inner {
       grid-template-columns: 1fr 1fr;
     }
