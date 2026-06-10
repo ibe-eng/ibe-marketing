@@ -1,0 +1,83 @@
+{
+  "version": "1",
+  "generatedFrom": "ibe-toolbox/apps/web/src/lib/tools.ts",
+  "tools": [
+    {
+      "id": "floor-plan",
+      "name": "Integrat3D Studio",
+      "blurb": "Draw walls, doors, windows. Generate framing. Export to Revit.",
+      "status": "live",
+      "tier": "public",
+      "surfaces": ["toolbox", "aec-os"],
+      "group": "work",
+      "web": "/projects?tool=floor-plan",
+      "repo": "ibe-floor-plan-builder"
+    },
+    {
+      "id": "project-builder",
+      "name": "Project Builder",
+      "blurb": "Set up rooms, levels, and scope. The shell every other tool runs on.",
+      "status": "coming-soon",
+      "tier": "team",
+      "surfaces": ["aec-os"],
+      "group": "eng",
+      "web": null,
+      "repo": "ibe-project-builder"
+    },
+    {
+      "id": "pdf-importer",
+      "name": "PDF Floor Plan Importer",
+      "blurb": "Upload an existing plan set. Get a working model back.",
+      "status": "live",
+      "tier": "public",
+      "surfaces": ["toolbox", "aec-os"],
+      "group": "work",
+      "web": "/projects?tool=pdf-importer",
+      "repo": "ibe-pdf-importer"
+    },
+    {
+      "id": "proposal-builder",
+      "name": "Proposal Builder",
+      "blurb": "Scope it, price it, send it.",
+      "status": "live",
+      "tier": "team",
+      "surfaces": ["aec-os"],
+      "group": "biz",
+      "web": "/projects?tool=proposal-builder",
+      "repo": "ibe-proposal-builder"
+    },
+    {
+      "id": "contam",
+      "name": "CONTAM Automation",
+      "blurb": "Smoke-control modeling for high-rise residential.",
+      "status": "roadmap",
+      "tier": "team",
+      "surfaces": ["aec-os"],
+      "group": "work",
+      "web": null,
+      "repo": "ibe-contam-pipeline"
+    },
+    {
+      "id": "submittal-to-family",
+      "name": "Submittal-to-Family",
+      "blurb": "Manufacturer PDF in. Revit family out.",
+      "status": "live",
+      "tier": "public",
+      "surfaces": ["toolbox", "aec-os"],
+      "group": "work",
+      "web": "/projects?tool=submittal-to-family",
+      "repo": "ibe-submittal-to-family"
+    },
+    {
+      "id": "energy-model",
+      "name": "Calibrated Energy Model",
+      "blurb": "HVAKR loads + observed weather → calibrated kWh + $.",
+      "status": "live",
+      "tier": "team",
+      "surfaces": ["aec-os"],
+      "group": "work",
+      "web": "/projects?tool=energy-model",
+      "repo": "ibe-energy-model"
+    }
+  ]
+}
