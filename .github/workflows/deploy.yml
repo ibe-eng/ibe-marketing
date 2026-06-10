@@ -4,6 +4,11 @@ on:
   push:
     branches: [main]
   workflow_dispatch:
+  schedule:
+    # Weekly rebuild (Mon 06:00 UTC) so the /toolbox page re-pulls the live
+    # tool catalog from toolbox.ibe.engineering/api/tool-catalog even when
+    # nothing was committed here.
+    - cron: "0 6 * * 1"
 
 permissions:
   contents: read

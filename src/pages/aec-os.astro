@@ -1,0 +1,131 @@
+---
+import Base from '../layouts/Base.astro';
+import Hero from '../components/Hero.astro';
+import Tile from '../components/Tile.astro';
+import CtaStrip from '../components/CtaStrip.astro';
+
+const pillars = [
+  {
+    title: 'One project, every tool',
+    body: 'Each tool reads and writes the same project — floor plans, framing, energy models, proposals all attach to one source of truth instead of a folder of disconnected files.',
+  },
+  {
+    title: 'The office layer',
+    body: 'Beyond the shop-floor tools: proposals, project setup, and the business workflows that surround the design work — in the same place the design work happens.',
+  },
+  {
+    title: 'Web and desktop',
+    body: 'The same platform runs in the browser and as a native desktop app. Your team gets the surface that fits the work; the tools and projects are identical on both.',
+  },
+];
+
+const tiers = [
+  {
+    title: 'Toolbox',
+    status: 'Self-serve',
+    body: 'Pay-per-project access to the shop-floor tools at toolbox.ibe.engineering. Sign up, start a project, export. No commitment, no team setup.',
+    bullets: ['Integrat3D Studio, PDF Importer, Submittal-to-Family', 'Per-project unlock', 'Browser-based'],
+  },
+  {
+    title: 'AEC-OS team',
+    status: 'For firms',
+    body: 'The full suite for teams: every Toolbox tool plus the office layer and a shared workspace, on web and desktop.',
+    bullets: ['Everything in the Toolbox', 'Proposals, project setup, energy modeling', 'Shared team workspace'],
+  },
+];
+---
+
+<Base
+  title="AEC-OS | One platform for building design and delivery"
+  description="AEC-OS is the platform behind the IBE Toolbox — the same building-design tools plus the office layer and a shared team workspace, on web and desktop."
+>
+  <Hero
+    eyebrow="AEC-OS"
+    headlineLead="The platform behind the "
+    underlinedWord="tools."
+    headlineTail=""
+    sub="The IBE Toolbox is the self-serve tier of something bigger: one platform where design tools, project data, and office workflows run together. Built by engineers who use it on real coordinated projects every day."
+    primaryHref="mailto:info@ibe.engineering?subject=AEC-OS%20team%20tier"
+    primaryLabel="Talk to us about team access"
+    secondaryHref="/toolbox"
+    secondaryLabel="See the Toolbox"
+  />
+
+  <section class="section section--alt">
+    <div class="container">
+      <span class="eyebrow">Why a platform</span>
+      <h2 class="section__heading">Tools that share a project, not a folder.</h2>
+      <div class="grid-3">
+        {pillars.map((p) => (
+          <Tile title={p.title} body={p.body} variant="outcome" />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <span class="eyebrow">Two tiers, one platform</span>
+      <h2 class="section__heading">Start self-serve. Grow into the suite.</h2>
+      <div class="grid-2">
+        {tiers.map((t) => (
+          <Tile title={t.title} status={t.status} body={t.body} bullets={t.bullets} variant="tool" />
+        ))}
+      </div>
+      <p class="tier-footnote">
+        Team-tier access is rolling out with our own projects first.
+        <a href="mailto:info@ibe.engineering?subject=AEC-OS%20team%20tier">Email us</a> to talk about
+        your firm.
+      </p>
+    </div>
+  </section>
+
+  <CtaStrip
+    taglineLead="Plan Well. "
+    taglineWord="Build Well."
+    taglineTail=""
+    primaryHref="https://toolbox.ibe.engineering/sign-up"
+    primaryLabel="Create account"
+    secondaryHref="mailto:info@ibe.engineering?subject=AEC-OS%20team%20tier"
+    secondaryLabel="Contact us"
+  />
+</Base>
+
+<style>
+  .section__heading {
+    margin-top: var(--s-2);
+    margin-bottom: var(--s-8);
+    max-width: 28ch;
+  }
+
+  .grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--s-6);
+  }
+
+  .grid-2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--s-6);
+    max-width: 880px;
+  }
+
+  .tier-footnote {
+    margin-top: var(--s-6);
+    color: var(--color-ink-muted);
+    line-height: var(--lh-body);
+  }
+
+  .tier-footnote a {
+    color: var(--color-accent);
+    font-weight: var(--fw-medium);
+  }
+
+  @media (max-width: 980px) {
+    .grid-3,
+    .grid-2 {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

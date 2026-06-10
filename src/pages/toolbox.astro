@@ -3,11 +3,16 @@ import Base from '../layouts/Base.astro';
 import Hero from '../components/Hero.astro';
 import Tile from '../components/Tile.astro';
 import CtaStrip from '../components/CtaStrip.astro';
+import { loadCatalog, STATUS_LABELS, type CatalogTool } from '../lib/catalog';
 
-const tools = [
-  {
-    title: 'Integrat3D Studio',
-    status: 'Live',
+// Tool list comes from the live toolbox catalog at build time (with a committed
+// fallback), so this page can't claim a tool is "coming soon" after it ships.
+const catalog = await loadCatalog();
+
+// Marketing enrichment layered over catalog truth — name/status/tier always
+// come from the catalog; we only add longer body copy and bullets per tool id.
+const enrichment: Record<string, { body?: string; bullets?: string[] }> = {
+  'floor-plan': {
     body: 'Sketch a floor plan, get a 3D preview, framing plan, full PDF set, and a Revit-ready bundle. Permit-ready outputs without the Revit learning curve.',
     bullets: [
       'Drag-and-draw walls, doors, windows',
@@ -15,17 +20,37 @@ const tools = [
       'PDF plan set + Revit bundle export',
     ],
   },
-  {
-    title: 'Project Builder',
-    status: 'Coming soon',
+  'pdf-importer': {
+    body: 'Drop in an existing PDF plan set and get a parsed model back — walls, rooms, and dimensions ready to refine in Integrat3D Studio.',
+  },
+  'submittal-to-family': {
+    body: 'Upload a manufacturer submittal PDF and get a Revit family back — equipment geometry and parameters extracted for you.',
+  },
+  'project-builder': {
     body: 'Set up structured projects that every other tool attaches to. One source of truth for levels, scopes, deliverables, and exports.',
   },
-  {
-    title: 'PDF Floor Plan Importer',
-    status: 'Coming soon',
-    body: 'Drop in an existing PDF set and get a parsed model back — walls, doors, dimensions, room labels, ready to refine in Integrat3D Studio.',
+  'proposal-builder': {
+    body: 'Build scoped, priced proposals from the same project data your tools run on — and send them.',
   },
-];
+  'energy-model': {
+    body: 'Calibrated hourly energy modeling: real loads plus observed weather, returning kWh and dollars you can stand behind.',
+  },
+  contam: {
+    body: 'Smoke-control modeling for high-rise residential, automated.',
+  },
+};
+
+const tileFor = (t: CatalogTool) => ({
+  title: t.name,
+  status: STATUS_LABELS[t.status] ?? t.status,
+  body: enrichment[t.id]?.body ?? t.blurb,
+  bullets: enrichment[t.id]?.bullets,
+});
+
+// Self-serve tier: what anyone gets at toolbox.ibe.engineering today.
+const selfServe = catalog.tools.filter((t) => t.tier === 'public').map(tileFor);
+// Team tier: the fuller AEC-OS suite (business layer + team workspace).
+const teamTier = catalog.tools.filter((t) => t.tier === 'team').map(tileFor);
 
 const faq = [
   {
@@ -41,6 +66,10 @@ const faq = [
     a: 'The Toolbox is built for AEC firms, remodelers, builders, estimators, and designers who need faster building-design workflows without living inside Revit full time.',
   },
   {
+    q: 'What is the difference between the Toolbox and AEC-OS?',
+    a: 'Same platform, two tiers. The Toolbox is the self-serve tier: pay-per-project access to the shop-floor tools. AEC-OS team is the full suite for firms — every tool plus proposals, project setup, and a shared team workspace.',
+  },
+  {
     q: 'Can I export to Revit?',
     a: 'Yes. The Toolbox is designed around Revit-native workflows and exports.',
   },
@@ -49,7 +78,7 @@ const faq = [
 
 <Base
   title="IBE Toolbox | Building design and Revit export tools"
-  description="Sketch floor plans, generate framing layouts, preview buildings in 3D, and export Revit-ready building packages with the IBE Toolbox."
+  description="Sketch floor plans, import PDF plan sets, generate framing layouts, build Revit families from submittals, and export Revit-ready building packages with the IBE Toolbox."
 >
   <Hero
     eyebrow="The IBE Toolbox"
@@ -65,23 +94,34 @@ const faq = [
 
   <section class="section section--alt">
     <div class="container">
-      <span class="eyebrow">What's inside</span>
+      <span class="eyebrow">In the Toolbox — self-serve</span>
       <h2 class="section__heading">Built from real coordination workflows.</h2>
       <div class="tools-grid">
-        {tools.map((t) => (
-          <Tile
-            title={t.title}
-            status={t.status}
-            body={t.body}
-            bullets={t.bullets}
-            variant="tool"
-          />
+        {selfServe.map((t) => (
+          <Tile title={t.title} status={t.status} body={t.body} bullets={t.bullets} variant="tool" />
         ))}
       </div>
     </div>
   </section>
 
   <section class="section">
+    <div class="container">
+      <span class="eyebrow">The full suite — AEC-OS team tier</span>
+      <h2 class="section__heading">When your whole firm runs on it.</h2>
+      <p class="tier-note">
+        Every self-serve tool above, plus the office layer — proposals, project setup,
+        energy modeling — in a shared team workspace.
+        <a href="/aec-os">Learn about AEC-OS&nbsp;→</a>
+      </p>
+      <div class="tools-grid">
+        {teamTier.map((t) => (
+          <Tile title={t.title} status={t.status} body={t.body} bullets={t.bullets} variant="tool" />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--alt">
     <div class="container faq">
       <span class="eyebrow">Toolbox FAQ</span>
       <h2 class="section__heading">Questions about the software.</h2>
@@ -115,6 +155,19 @@ const faq = [
     max-width: 28ch;
   }
 
+  .tier-note {
+    margin-top: calc(-1 * var(--s-6));
+    margin-bottom: var(--s-8);
+    max-width: 64ch;
+    color: var(--color-ink-muted);
+    line-height: var(--lh-body);
+  }
+
+  .tier-note a {
+    color: var(--color-accent);
+    font-weight: var(--fw-medium);
+  }
+
   .tools-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -131,7 +184,7 @@ const faq = [
     padding: var(--s-6);
     border: 1px solid var(--color-rule);
     border-radius: var(--radius-md);
-    background: var(--color-surface-alt);
+    background: var(--color-bg);
   }
 
   .faq-item h3 {
