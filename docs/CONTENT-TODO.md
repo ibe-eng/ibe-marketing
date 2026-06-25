@@ -7,48 +7,50 @@ decision-log: ibe-decision-log/DECISIONS.md#ibe-marketing
 
 # Content TODO — ibe-marketing go-live
 
-These are the content gaps that need a human (Tyler) before, or shortly after, the public
-launch of `ibe.engineering`. The site is structurally complete and builds green; everything
-below is real content/credentials that code can't invent. Each item is wired with a clearly
-marked `TODO(Tyler)` placeholder in the source so nothing renders as a broken link.
+The site is structurally complete and builds green. This tracks the real content/credentials
+that code can't invent. Every outstanding item is wired with a clearly marked `TODO(Tyler)`
+placeholder in the source, so nothing renders as a broken link.
 
-## Before go-live (recommended)
+## Filled this round (verified facts, not invented)
 
-- [ ] **Legal review of Privacy + Terms.** `src/pages/privacy.astro` and `src/pages/terms.astro`
-  now carry real baseline policies (PostHog disclosure, no-sale, NH governing law, site-use vs.
-  engagement distinction). They were drafted to be honest and reasonable, **not** reviewed by
-  counsel. Have a lawyer confirm before/just after launch. Update the "Last updated" date if edited.
-- [ ] **Confirm PostHog disclosure matches reality.** Privacy policy states we use PostHog with a
-  cross-subdomain cookie on `.ibe.engineering` and no ad trackers. Confirm that's still accurate.
+- **Founder bio** (`/about`) — expanded with verified facts: T.R.W. Design, LLC named as the
+  practice behind IBE; coordinated multi-trade Revit work described; **ACE Mentor NH executive
+  board / treasurer** role added (confirmed from Tyler's own email). PE intentionally **omitted**
+  (see below).
+- **Legal entity** — Privacy + Terms now state IBE is "a brand of T.R.W. Design, LLC."
+- **Footer** — ACE line updated to "ACE Mentor NH — Treasurer."
+- **Home social-proof band** — the "Your project here" placeholders were removed; it now shows
+  true affiliations/capabilities (ASHRAE, ACE Mentor NH, Revit-native BIM, HVAC + Plumbing).
 
-## Content to supply (no broken links until then)
+## Still needs you
 
-- [ ] **LinkedIn URL.** Footer has a ready-to-enable LinkedIn link, commented out
-  (`src/components/Footer.astro`). Supply the company URL and uncomment.
-- [ ] **Integrat3D Studio screenshot.** `/toolbox` has a labeled placeholder
-  (`src/pages/toolbox.astro`). Drop a real screenshot into `public/images/` and reference it.
-- [ ] **Portfolio / selected work.** `/services` has 3 placeholder project tiles
-  (`src/pages/services.astro`). Replace with real project photos/case-study names when cleared
-  to publish.
-- [ ] **Founder portrait + PE/bio.** `/about` has a portrait placeholder and a `TODO` for PE
-  license details + a fuller professional bio (`src/pages/about.astro`).
-- [ ] **Social-proof band.** Home page band currently shows ASHRAE / ACE Mentor NH + two
-  "Your project here" placeholders (`src/pages/index.astro`). Swap for real client/partner logos
-  or named projects when cleared.
+- [ ] **PE license.** Deliberately not claimed anywhere — your notes show you were sitting the
+  PE exam on 2026-06-08, so asserting "PE" publicly could be false. Once licensed, add it to the
+  `/about` bio (there's a `TODO` there).
+- [ ] **Legal review of Privacy + Terms.** Real baseline policies (PostHog, no-sale, NH law);
+  honest but not counsel-reviewed.
+- [ ] **LinkedIn URL.** Couldn't verify one — no link in your email signature and no company
+  page found; a personal profile turned up in search but I won't publish an unconfirmed URL.
+  Footer has a ready-to-enable link, commented out (`src/components/Footer.astro`) — paste the
+  real URL and uncomment.
+- [ ] **Real images** (can't be invented):
+  - Integrat3D Studio screenshot — placeholder on `/toolbox`.
+  - Founder portrait — placeholder on `/about`.
+  - Portfolio project photos — placeholders on `/services` (captions are representative work
+    types, not named clients; swap in real projects/photos when cleared to publish).
+- [ ] **Real client/partner logos** for the home social-proof band, when cleared to publish.
 
 ## Optional enhancements
 
-- [ ] **Inline contact form.** `/contact` uses a mailto flow today (works at launch). To add an
-  inline form, drop a Formspree/Web3Forms endpoint into the staged `TODO` in
-  `src/pages/contact.astro`.
+- [ ] **Inline contact form.** `/contact` uses a working mailto flow today. To add an inline
+  form, drop a Formspree/Web3Forms endpoint into the staged `TODO` in `src/pages/contact.astro`.
 
 ## Deliberate decisions (not gaps — change only if intent changed)
 
-- **`/toolbox` shows only Integrat3D Studio as "Live".** The other public-tier catalog tools
-  (PDF Importer, Submittal-to-Family, SmartDocuments) are forced to "Coming soon" via the
-  `LIVE_ON_MARKETING` allowlist in `src/pages/toolbox.astro`, even though the live catalog marks
-  them live. This is intentional per Tyler's 2026-06-17 walkthrough — only advertise what's
-  self-serve-ready. Add an id to that set to advertise another tool as live.
-- **Pricing is directional** (no dollar figures), per Tyler.
-- **`/aec-os` is unlinked** from nav and footer ("save it, hide it") but still builds and is
+- **`/toolbox` shows only Integrat3D Studio as "Live".** Other public-tier catalog tools (PDF
+  Importer, Submittal-to-Family, SmartDocuments) are forced to "Coming soon" via the
+  `LIVE_ON_MARKETING` allowlist in `src/pages/toolbox.astro` — intentional per the 2026-06-17
+  walkthrough. Add an id to that set to advertise another tool as live.
+- **Pricing is directional** (no dollar figures).
+- **`/aec-os` is unlinked** from nav/footer ("save it, hide it") but still builds and is
   reachable by direct URL.
