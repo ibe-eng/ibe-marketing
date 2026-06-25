@@ -1,0 +1,171 @@
+---
+import Base from '../layouts/Base.astro';
+import CtaStrip from '../components/CtaStrip.astro';
+---
+
+<Base
+  title="Contact IBE | Talk to our engineers"
+  description="Get in touch with Integrated Building Engineering about coordinated HVAC, plumbing, and BIM services or the IBE Toolbox."
+>
+  <section class="section">
+    <div class="container contact-head">
+      <span class="eyebrow">Contact</span>
+      <h1>Let's talk about your project.</h1>
+      <p>
+        Tell us what you're building and what you need — coordinated engineering, a permit-ready
+        plan set, or help getting started in the Toolbox. We read every message.
+      </p>
+    </div>
+  </section>
+
+  <section class="section section--alt">
+    <div class="container contact-grid">
+      <div class="contact-card">
+        <h2>Reach us directly</h2>
+        <ul class="contact-list">
+          <li>
+            <span class="contact-list__label">Email</span>
+            <a href="mailto:info@ibe.engineering?subject=Project%20inquiry">info@ibe.engineering</a>
+          </li>
+          <li>
+            <span class="contact-list__label">Phone</span>
+            <a href="tel:+16035212604">(603) 521-2604</a>
+          </li>
+          <li>
+            <span class="contact-list__label">Service area</span>
+            <span>New Hampshire and the Northeast</span>
+          </li>
+        </ul>
+        <a
+          href="mailto:info@ibe.engineering?subject=Project%20inquiry&body=Project%20type%3A%0AScope%2Fservices%20needed%3A%0ATimeline%3A%0ALocation%3A%0AAnything%20else%3A%0A"
+          class="btn btn--primary"
+        >
+          Start a project email
+        </a>
+      </div>
+
+      <div class="contact-aside">
+        <h2>What to include</h2>
+        <ul class="contact-aside__list">
+          <li>Project type and location</li>
+          <li>Which services or Toolbox tools you're interested in</li>
+          <li>Rough timeline and current stage</li>
+          <li>Any drawings or documents you already have</li>
+        </ul>
+        <p class="contact-aside__note">
+          Prefer the software? You can also
+          <a href="https://toolbox.ibe.engineering/toolbox" rel="noopener">open the Toolbox</a>
+          and start a project yourself.
+        </p>
+        {/* TODO(Tyler): to add an inline form, drop a Formspree/Web3Forms endpoint here:
+            <form action="https://formspree.io/f/REPLACE-ME" method="POST"> ... </form>
+            Until then the mailto flow above is the live contact path. */}
+      </div>
+    </div>
+  </section>
+
+  <CtaStrip
+    taglineLead="Plan Well. "
+    taglineWord="Build Well."
+    taglineTail=""
+    primaryHref="https://toolbox.ibe.engineering/toolbox"
+    primaryLabel="Open the Toolbox"
+    secondaryHref="mailto:info@ibe.engineering?subject=Project%20inquiry"
+    secondaryLabel="Email us"
+  />
+</Base>
+
+<style>
+  .contact-head {
+    max-width: 640px;
+    display: grid;
+    gap: var(--s-4);
+  }
+
+  .contact-head h1 {
+    font-size: var(--fs-h2);
+  }
+
+  .contact-head p {
+    color: var(--color-ink-muted);
+    line-height: var(--lh-body);
+  }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--s-8);
+    align-items: start;
+  }
+
+  .contact-card {
+    background: var(--color-bg);
+    border: 1px solid var(--color-rule);
+    border-radius: var(--radius-md);
+    padding: var(--s-8);
+    display: grid;
+    gap: var(--s-6);
+  }
+
+  .contact-card h2,
+  .contact-aside h2 {
+    font-size: var(--fs-h3);
+  }
+
+  .contact-list {
+    list-style: none;
+    display: grid;
+    gap: var(--s-4);
+  }
+
+  .contact-list li {
+    display: grid;
+    gap: var(--s-1);
+  }
+
+  .contact-list__label {
+    font-size: var(--fs-small);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--color-ink-muted);
+  }
+
+  .contact-list a {
+    color: var(--color-accent);
+    font-weight: var(--fw-medium);
+  }
+
+  .contact-card .btn {
+    justify-self: start;
+  }
+
+  .contact-aside {
+    display: grid;
+    gap: var(--s-4);
+    padding-top: var(--s-2);
+  }
+
+  .contact-aside__list {
+    display: grid;
+    gap: var(--s-3);
+    padding-left: 1.1rem;
+    color: var(--color-ink-muted);
+    line-height: var(--lh-body);
+  }
+
+  .contact-aside__note {
+    color: var(--color-ink-muted);
+    line-height: var(--lh-body);
+  }
+
+  .contact-aside__note a {
+    color: var(--color-accent);
+    font-weight: var(--fw-medium);
+  }
+
+  @media (max-width: 860px) {
+    .contact-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

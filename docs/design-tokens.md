@@ -32,7 +32,7 @@ other repo points back at this doc.
 | `ibe-white` | `#ffffff` | — | Text on dark surfaces and inside the red accent. |
 | `ibe-ink` | `#111111` | — | Primary text on white in the marketing site. |
 | `ibe-ink-muted` | `#555555` | — | Secondary text on white. |
-| `ibe-rule` | `#e5e5e5` | — | Hairline rules / dividers on white. |
+| `ibe-rule` | `#d4d4d4` | — | Hairline rules / dividers on white. (Darkened from `#e5e5e5` on 2026-06-17 — the lighter value was invisible on card/column borders.) |
 
 ### Dark surfaces (daemon UIs)
 
@@ -52,7 +52,7 @@ tray + overlay surfaces. The marketing site does not use them today.
 
 | Token | Hex | Usage |
 | --- | --- | --- |
-| `ibe-surface-alt` | `#f7f7f7` | Light card / section background on the marketing site. |
+| `ibe-surface-alt` | `#ebebeb` | Light card / section background on the marketing site. (Darkened from `#f7f7f7` on 2026-06-17 — the white→gray section transition was invisible.) |
 | `ibe-surface-dark` | `#000000` | Marketing-site dark-surface accent (full black, distinct from `ibe-bg`). |
 
 ## Typography
@@ -99,8 +99,10 @@ tray + overlay surfaces. The marketing site does not use them today.
 | `ibe-s-2` | `0.5rem` (8px) |
 | `ibe-s-3` | `0.75rem` (12px) |
 | `ibe-s-4` | `1rem` (16px) |
+| `ibe-s-5` | `1.25rem` (20px) |
 | `ibe-s-6` | `1.5rem` (24px) |
 | `ibe-s-8` | `2rem` (32px) |
+| `ibe-s-10` | `2.5rem` (40px) |
 | `ibe-s-12` | `3rem` (48px) |
 | `ibe-s-16` | `4rem` (64px) |
 | `ibe-s-24` | `6rem` (96px) |

@@ -7,11 +7,24 @@ const year = new Date().getFullYear();
     <div class="site-footer__brand">
       <img
         src="/images/ibe_logo_horiz_white_red.png"
-        alt="IBE — Integrat3D Building Engineering"
+        alt="IBE — Integrated Building Engineering"
         width="180"
         height="36"
       />
       <p class="site-footer__tag">Plan Well. Build Well.</p>
+      {/* TODO(Tyler): supply the IBE/TRW LinkedIn URL, then uncomment.
+      <a class="site-footer__social" href="https://www.linkedin.com/company/REPLACE-ME" rel="noopener">LinkedIn</a>
+      */}
+    </div>
+
+    <div class="site-footer__nav">
+      <h3 class="site-footer__heading">Explore</h3>
+      <ul>
+        <li><a href="/services">Services</a></li>
+        <li><a href="/toolbox">Toolbox</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
     </div>
 
     <div class="site-footer__contact">
@@ -61,7 +74,7 @@ const year = new Date().getFullYear();
 
   .site-footer__inner {
     display: grid;
-    grid-template-columns: 2fr 1fr 1fr 1fr;
+    grid-template-columns: 1.6fr repeat(4, 1fr);
     gap: var(--s-8);
     padding-bottom: var(--s-12);
     border-bottom: 1px solid rgba(255, 255, 255, 0.15);

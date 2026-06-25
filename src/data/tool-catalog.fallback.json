@@ -78,6 +78,28 @@
       "group": "work",
       "web": "/projects?tool=energy-model",
       "repo": "ibe-energy-model"
+    },
+    {
+      "id": "smart-documents",
+      "name": "SmartDocuments",
+      "blurb": "Upload a plan set. It stays model-aware, versioned, and fast.",
+      "status": "live",
+      "tier": "public",
+      "surfaces": ["toolbox", "aec-os"],
+      "group": "work",
+      "web": "/projects?tool=smart-documents",
+      "repo": null
+    },
+    {
+      "id": "focus",
+      "name": "IBE Focus",
+      "blurb": "Schedule enforcement + activity tracking.",
+      "status": "live",
+      "tier": "team",
+      "surfaces": ["aec-os"],
+      "group": "eng",
+      "web": "/focus",
+      "repo": "ibe-focus"
     }
   ]
 }

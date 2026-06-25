@@ -38,22 +38,39 @@ const faq = [
     primaryHref="mailto:info@ibe.engineering?subject=Project%20inquiry"
     primaryLabel="Talk to our engineers"
     secondaryHref="/toolbox"
-    secondaryLabel="View toolbox features"
+    secondaryLabel="Explore the Toolbox"
   />
 
   <section class="section section--alt">
     <div class="container split-grid">
-      <a class="path-card" href="mailto:info@ibe.engineering?subject=Engineering%20services%20inquiry">
+      <a class="path-card" href="/services">
         <span class="eyebrow">Services</span>
         <h2>I need engineering services.</h2>
         <p>HVAC design, plumbing design, BIM coordination, clash detection, and Revit-native deliverables.</p>
+        <span class="path-card__more">See services <span aria-hidden="true">→</span></span>
       </a>
 
       <a class="path-card" href="/toolbox">
         <span class="eyebrow">Software</span>
         <h2>I want to use the Toolbox.</h2>
         <p>Browser-based tools for floor plans, 3D previews, framing layouts, and Revit-ready exports.</p>
+        <span class="path-card__more">Explore the Toolbox <span aria-hidden="true">→</span></span>
       </a>
+    </div>
+  </section>
+
+  <section class="section social-proof">
+    <div class="container">
+      <p class="social-proof__lead">
+        Built and used on real coordinated projects across New Hampshire and the Northeast.
+      </p>
+      {/* TODO(Tyler): swap these for real client/partner logos or named projects when cleared to publish. */}
+      <ul class="social-proof__logos" aria-label="Selected clients and partners">
+        <li class="social-proof__logo">ASHRAE</li>
+        <li class="social-proof__logo">ACE Mentor NH</li>
+        <li class="social-proof__logo">Your project here</li>
+        <li class="social-proof__logo">Your project here</li>
+      </ul>
     </div>
   </section>
 
@@ -78,9 +95,9 @@ const faq = [
     taglineWord="Well."
     taglineTail=" Build Well."
     primaryHref="https://toolbox.ibe.engineering/toolbox"
-    primaryLabel="Login"
-    secondaryHref="/toolbox"
-    secondaryLabel="View toolbox features"
+    primaryLabel="Open the Toolbox"
+    secondaryHref="mailto:info@ibe.engineering?subject=Project%20inquiry"
+    secondaryLabel="Talk to our engineers"
   />
 </Base>
 
@@ -95,23 +112,63 @@ const faq = [
     padding: var(--s-8);
     border-radius: var(--radius-md);
     border: 1px solid var(--color-rule);
-    background: white;
+    background: var(--color-bg);
     text-decoration: none;
     color: inherit;
-    transition: transform 120ms ease;
+    display: grid;
+    gap: var(--s-2);
+    transition: border-color var(--transition-fast), transform var(--transition-fast);
   }
 
-  .path-card:hover {
+  .path-card:hover,
+  .path-card:focus-visible {
     transform: translateY(-2px);
+    border-color: var(--color-ink);
   }
 
   .path-card h2 {
-    margin: var(--s-2) 0 var(--s-3);
+    margin: var(--s-2) 0 var(--s-1);
   }
 
   .path-card p {
     color: var(--color-ink-muted);
     line-height: var(--lh-body);
+  }
+
+  .path-card__more {
+    margin-top: var(--s-3);
+    font-weight: var(--fw-medium);
+    color: var(--color-accent);
+  }
+
+  .social-proof {
+    padding-block: clamp(var(--s-8), 5vw, var(--s-12));
+    border-top: 1px solid var(--color-rule);
+    border-bottom: 1px solid var(--color-rule);
+  }
+
+  .social-proof__lead {
+    text-align: center;
+    color: var(--color-ink-muted);
+    max-width: none;
+    margin-bottom: var(--s-6);
+  }
+
+  .social-proof__logos {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: var(--s-8);
+  }
+
+  .social-proof__logo {
+    font-weight: var(--fw-bold);
+    font-size: var(--fs-h3);
+    color: var(--color-ink);
+    opacity: 0.45;
+    letter-spacing: -0.01em;
   }
 
   .section__heading {
