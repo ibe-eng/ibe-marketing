@@ -2,9 +2,13 @@
 const navLinks = [
   { href: '/services', label: 'Services' },
   { href: '/toolbox', label: 'Toolbox' },
-  { href: '/aec-os', label: 'AEC-OS' },
-  { href: 'mailto:info@ibe.engineering?subject=Project%20inquiry', label: 'Contact' },
+  { href: '/about', label: 'About' },
+  { href: '/contact', label: 'Contact' },
 ];
+
+// Normalize for active-state matching (trailingSlash: 'never').
+const current = Astro.url.pathname.replace(/\/$/, '') || '/';
+const isActive = (href: string) => href === current || (href !== '/' && current.startsWith(href + '/'));
 ---
 
 <header class="site-header">
@@ -12,7 +16,7 @@ const navLinks = [
     <a href="/" class="site-header__brand" aria-label="IBE — Integrated Building Engineering home">
       <img
         src="/images/ibe_logo_horiz_white_red.png"
-        alt="IBE — Integrat3D Building Engineering"
+        alt="IBE — Integrated Building Engineering"
         width="253"
         height="51"
       />
@@ -21,7 +25,7 @@ const navLinks = [
       <ul>
         {navLinks.map((link) => (
           <li>
-            <a href={link.href}>{link.label}</a>
+            <a href={link.href} aria-current={isActive(link.href) ? 'page' : undefined}>{link.label}</a>
           </li>
         ))}
       </ul>
@@ -31,16 +35,16 @@ const navLinks = [
       class="btn btn--primary site-header__cta"
       rel="noopener"
     >
-      Login
+      Open the Toolbox
     </a>
 
     <details class="site-header__mobile-menu">
       <summary>Menu</summary>
       <nav aria-label="Mobile primary">
         {navLinks.map((link) => (
-          <a href={link.href}>{link.label}</a>
+          <a href={link.href} aria-current={isActive(link.href) ? 'page' : undefined}>{link.label}</a>
         ))}
-        <a href="https://toolbox.ibe.engineering/toolbox" rel="noopener">Login</a>
+        <a href="https://toolbox.ibe.engineering/toolbox" rel="noopener">Open the Toolbox</a>
       </nav>
     </details>
   </div>
@@ -91,6 +95,16 @@ const navLinks = [
 
   .site-header__nav a:hover {
     color: var(--color-accent-ink);
+  }
+
+  .site-header__nav a[aria-current='page'] {
+    color: var(--color-accent-ink);
+    border-bottom: 2px solid var(--color-accent);
+    padding-bottom: 2px;
+  }
+
+  .site-header__mobile-menu nav a[aria-current='page'] {
+    color: var(--color-accent);
   }
 
   .site-header__cta {

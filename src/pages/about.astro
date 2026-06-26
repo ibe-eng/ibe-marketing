@@ -1,0 +1,149 @@
+---
+import Base from '../layouts/Base.astro';
+import Hero from '../components/Hero.astro';
+import CtaStrip from '../components/CtaStrip.astro';
+---
+
+<Base
+  title="About IBE | Engineering practice that builds its own tools"
+  description="Integrated Building Engineering is a New Hampshire engineering practice that builds the software tools it uses on real coordinated projects."
+>
+  <Hero
+    eyebrow="About IBE"
+    headlineLead="Software and services from working "
+    underlinedWord="engineers."
+    headlineTail=""
+    sub="Integrated Building Engineering is a New Hampshire engineering practice. We design coordinated HVAC, plumbing, and BIM deliverables — and we build the software we wished existed while doing it."
+  />
+
+  <section class="section section--alt">
+    <div class="container about-grid">
+      <article>
+        <span class="eyebrow">Our approach</span>
+        <h2>The tools come from the work.</h2>
+        <p>
+          Every tool in the IBE Toolbox started as something we built to make our own
+          coordination faster and more reliable. Once a workflow proved itself on real projects,
+          we made it available to other AEC teams and builders.
+        </p>
+        <p>
+          That order matters. We don't ship workflows we don't use ourselves, and engineering
+          judgment always stays with qualified professionals — the software removes repetitive
+          manual work, not accountability.
+        </p>
+      </article>
+
+      <article>
+        <span class="eyebrow">Who we serve</span>
+        <h2>Pros first, builders welcome.</h2>
+        <p>
+          We work with engineering firms, contractors, developers, and BIM coordinators who need
+          coordinated, constructable deliverables. We also build for remodelers, estimators, and
+          designers who need permit-ready outputs without becoming full-time Revit operators.
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container founder">
+      <div class="founder__portrait" aria-hidden="true">
+        {/* TODO(Tyler): drop a real portrait into public/images and reference it here. */}
+      </div>
+      <div class="founder__bio">
+        <span class="eyebrow">Founder</span>
+        <h2>Tyler Wilson</h2>
+        <p>
+          Tyler Wilson is the founder of IBE, building on years of mechanical and plumbing design
+          and BIM coordination at T.R.W. Design, LLC — the practice behind IBE. His work centers
+          on coordinated, field-ready documentation across every trade: HVAC, plumbing, sheet
+          metal and ductwork, electrical, and fire protection, modeled clash-free in 2D and 3D
+          Revit so crews keep moving on site.
+        </p>
+        <p>
+          He started IBE to close the gap between how building systems are designed and how they
+          actually get built — turning the repetitive parts of coordination into software so
+          engineers can spend their time on judgment, not redraws.
+        </p>
+        <p>
+          Tyler is an ASHRAE board member and serves on the executive board of the ACE Mentor
+          Program of New Hampshire as treasurer, helping bring the next generation into the AEC
+          industry.
+        </p>
+        {/* TODO(Tyler): add a portrait (public/images) and, once licensed, PE details. */}
+      </div>
+    </div>
+  </section>
+
+  <CtaStrip
+    taglineLead="Plan Well. "
+    taglineWord="Build Well."
+    taglineTail=""
+    primaryHref="https://toolbox.ibe.engineering/toolbox"
+    primaryLabel="Open the Toolbox"
+    secondaryHref="mailto:info@ibe.engineering?subject=Project%20inquiry"
+    secondaryLabel="Talk to our engineers"
+  />
+</Base>
+
+<style>
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--s-10);
+  }
+
+  .about-grid article {
+    display: grid;
+    gap: var(--s-4);
+    align-content: start;
+  }
+
+  .about-grid h2 {
+    font-size: var(--fs-h2);
+  }
+
+  .about-grid p {
+    color: var(--color-ink-muted);
+    line-height: var(--lh-body);
+  }
+
+  .founder {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: var(--s-10);
+    align-items: start;
+  }
+
+  .founder__portrait {
+    aspect-ratio: 4 / 5;
+    border-radius: var(--radius-md);
+    border: 1px dashed var(--color-rule);
+    background: var(--color-surface-alt);
+  }
+
+  .founder__bio {
+    display: grid;
+    gap: var(--s-4);
+  }
+
+  .founder__bio h2 {
+    font-size: var(--fs-h2);
+  }
+
+  .founder__bio p {
+    color: var(--color-ink-muted);
+    line-height: var(--lh-body);
+  }
+
+  @media (max-width: 860px) {
+    .about-grid,
+    .founder {
+      grid-template-columns: 1fr;
+    }
+
+    .founder__portrait {
+      max-width: 280px;
+    }
+  }
+</style>

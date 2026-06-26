@@ -1,20 +1,104 @@
 ---
 import Base from '../layouts/Base.astro';
+
+const updated = 'June 25, 2026';
 ---
 
-<Base title="Privacy — IBE">
+<Base
+  title="Privacy Policy — IBE"
+  description="How Integrated Building Engineering collects, uses, and protects information on ibe.engineering."
+>
   <section class="section">
     <div class="container policy">
       <span class="eyebrow">Privacy</span>
       <h1>Privacy policy</h1>
+      <p class="policy__meta">Last updated: {updated}</p>
+
       <p>
-        Our full privacy policy is in progress. The short version: we don't sell your data, we
-        don't run third-party trackers on this site, and we only use the contact information
-        you give us to reply to you.
+        Integrated Building Engineering ("IBE," "we," "us") — a brand of T.R.W. Design, LLC —
+        provides building-engineering services and software tools. This policy explains what information we collect through
+        this website (<a href="https://ibe.engineering">ibe.engineering</a>) and how we use it.
+        The IBE Toolbox application at
+        <a href="https://toolbox.ibe.engineering">toolbox.ibe.engineering</a> is a separate
+        product; data you enter there is governed by the terms and privacy notice presented in
+        that application.
       </p>
+
+      <h2>Information we collect</h2>
+      <ul>
+        <li>
+          <strong>Information you give us.</strong> When you email us or submit an inquiry, we
+          receive your name, email address, phone number, and any project details you choose to
+          share.
+        </li>
+        <li>
+          <strong>Usage analytics.</strong> We use PostHog, a product-analytics tool, to
+          understand how visitors use the site (pages viewed, general location, device and
+          browser type, and how you arrived). This helps us improve the site and understand
+          which services and tools are useful.
+        </li>
+      </ul>
+
+      <h2>Cookies and analytics</h2>
       <p>
-        For questions about how we handle data tied to specific engagements, email
-        <a href="mailto:info@ibe.engineering">info@ibe.engineering</a>.
+        PostHog sets a cookie scoped to <code>.ibe.engineering</code> so that a visit to this
+        site and a later visit to the IBE Toolbox can be understood as one journey. We do not
+        run advertising networks, third-party ad trackers, or social-media tracking pixels on
+        this site. Analytics run only on the production site.
+      </p>
+
+      <h2>How we use information</h2>
+      <ul>
+        <li>To respond to your inquiries and provide the services or tools you ask about.</li>
+        <li>To operate, maintain, and improve this website.</li>
+        <li>To comply with legal obligations.</li>
+      </ul>
+
+      <h2>How we share information</h2>
+      <p>
+        <strong>We do not sell your personal information.</strong> We share information only
+        with service providers that help us run the site and our business — for example, our
+        analytics provider (PostHog), our website host (GitHub Pages), and our email provider —
+        and only as needed for them to perform those services. We may also disclose information
+        if required by law.
+      </p>
+
+      <h2>Data retention</h2>
+      <p>
+        We keep inquiry correspondence for as long as needed to respond and to maintain our
+        business records, and analytics data for as long as it remains useful for understanding
+        site performance. You can ask us to delete information you've sent us at any time.
+      </p>
+
+      <h2>Your choices</h2>
+      <p>
+        You can email us at
+        <a href="mailto:info@ibe.engineering?subject=Privacy%20request">info@ibe.engineering</a>
+        to ask what information we hold about you, to correct it, or to request deletion. You
+        can also block cookies in your browser settings.
+      </p>
+
+      <h2>Security</h2>
+      <p>
+        We take reasonable measures to protect the information we hold. No method of
+        transmission or storage is completely secure, so we cannot guarantee absolute security.
+      </p>
+
+      <h2>Children's privacy</h2>
+      <p>This site is intended for businesses and professionals and is not directed to children.</p>
+
+      <h2>Changes to this policy</h2>
+      <p>
+        We may update this policy as our practices evolve. When we do, we'll revise the "last
+        updated" date above.
+      </p>
+
+      <h2>Contact</h2>
+      <p>
+        Questions about this policy? Email
+        <a href="mailto:info@ibe.engineering?subject=Privacy%20question">info@ibe.engineering</a>
+        or call <a href="tel:+16035212604">(603) 521-2604</a>. IBE operates from New Hampshire,
+        United States; this policy is governed by the laws of the State of New Hampshire.
       </p>
     </div>
   </section>
@@ -22,20 +106,43 @@ import Base from '../layouts/Base.astro';
 
 <style>
   .policy {
-    max-width: 720px;
+    max-width: 760px;
     display: grid;
     gap: var(--s-4);
   }
   .policy h1 {
     font-size: var(--fs-h2);
   }
-  .policy p {
+  .policy__meta {
     color: var(--color-ink-muted);
+    font-size: var(--fs-small);
+    margin-top: calc(-1 * var(--s-2));
+  }
+  .policy h2 {
+    font-size: var(--fs-h3);
+    margin-top: var(--s-6);
+  }
+  .policy p,
+  .policy li {
+    color: var(--color-ink-muted);
+    line-height: var(--lh-body);
+  }
+  .policy ul {
+    display: grid;
+    gap: var(--s-3);
+    padding-left: 1.1rem;
   }
   .policy a {
     color: var(--color-accent);
   }
   .policy a:hover {
     text-decoration: underline;
+  }
+  .policy code {
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 0.9em;
+    background: var(--color-surface-alt);
+    padding: 0.1em 0.35em;
+    border-radius: var(--radius-sm);
   }
 </style>
