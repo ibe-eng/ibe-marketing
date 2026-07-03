@@ -27,7 +27,7 @@ export interface CatalogTool {
   surfaces: string[];
   group: string;
   web: string | null;
-  repo: string;
+  repo: string | null; // catalog emits null for tools without a repo yet (e.g. contam)
 }
 
 export interface ToolCatalog {
