@@ -10,6 +10,8 @@ interface Props {
   pathname?: string;
   schema?: Record<string, unknown> | Record<string, unknown>[];
   image?: string;
+  /** Hide the page from search engines (unlinked/hidden pages, e.g. /aec-os until it goes public). */
+  noindex?: boolean;
 }
 
 const {
@@ -18,6 +20,7 @@ const {
   pathname = Astro.url.pathname,
   schema,
   image = '/images/ibe-og-default.png',
+  noindex = false,
 } = Astro.props;
 
 const canonical = new URL(pathname, Astro.site).toString();
@@ -33,6 +36,7 @@ const socialImage = new URL(image, Astro.site).toString();
 
     <title>{title}</title>
     <meta name="description" content={description} />
+    {noindex && <meta name="robots" content="noindex, nofollow" />}
     <link rel="canonical" href={canonical} />
 
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
