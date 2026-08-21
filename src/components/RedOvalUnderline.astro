@@ -39,9 +39,15 @@ const { word } = Astro.props;
 
   .oval-svg {
     position: absolute;
-    inset: -0.18em -0.1em -0.22em -0.1em;
-    width: calc(100% + 0.2em);
-    height: calc(100% + 0.4em);
+    /* SVG is a replaced element: inset alone won't stretch it, so size it
+       explicitly. The flat ellipse converges at its extremes, so the
+       horizontal overshoot must scale with word length (percent-based) for
+       the curve to clear the first/last letters instead of cutting through. */
+    top: -0.52em;
+    left: calc(-15% - 0.2em);
+    width: calc(130% + 0.4em);
+    max-width: none; /* the base.css media reset would clamp the overshoot */
+    height: calc(100% + 1.15em);
     z-index: 0;
     overflow: visible;
   }
