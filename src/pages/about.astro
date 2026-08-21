@@ -16,15 +16,28 @@ import CtaStrip from '../components/CtaStrip.astro';
     sub="Integrated Building Engineering is a New Hampshire engineering practice. We design coordinated HVAC, plumbing, and BIM deliverables — and we build the software we wished existed while doing it."
   />
 
+  <section class="section rebrand-note-section">
+    <div class="container">
+      <aside class="rebrand-note">
+        <p>
+          IBE is the new name for T.R.W. Design, LLC — the same New Hampshire engineering
+          practice and the same engineers, now with the software we build under one roof.
+          Nothing changes for existing clients or engagements.
+        </p>
+      </aside>
+    </div>
+  </section>
+
   <section class="section section--alt">
     <div class="container about-grid">
       <article>
         <span class="eyebrow">Our approach</span>
         <h2>The tools come from the work.</h2>
         <p>
-          Every tool in the IBE Toolbox started as something we built to make our own
-          coordination faster and more reliable. Once a workflow proved itself on real projects,
-          we made it available to other AEC teams and builders.
+          Every piece of software we run started as something we built to make our own
+          coordination faster and more reliable — automated extraction, Revit workflows,
+          reality capture, custom design tools. Once a workflow proves itself on real projects,
+          we roll it out gradually, starting with partner teams in private beta.
         </p>
         <p>
           That order matters. We don't ship workflows we don't use ourselves, and engineering
@@ -55,7 +68,7 @@ import CtaStrip from '../components/CtaStrip.astro';
         <h2>Tyler Wilson</h2>
         <p>
           Tyler Wilson is the founder of IBE, building on years of mechanical and plumbing design
-          and BIM coordination at T.R.W. Design, LLC — the practice behind IBE. His work centers
+          and BIM coordination. His work centers
           on coordinated, field-ready documentation across every trade: HVAC, plumbing, sheet
           metal and ductwork, electrical, and fire protection, modeled clash-free in 2D and 3D
           Revit so crews keep moving on site.
@@ -79,10 +92,10 @@ import CtaStrip from '../components/CtaStrip.astro';
     taglineLead="Plan Well. "
     taglineWord="Build Well."
     taglineTail=""
-    primaryHref="https://toolbox.ibe.engineering/toolbox"
-    primaryLabel="Open the Toolbox"
-    secondaryHref="mailto:info@ibe.engineering?subject=Project%20inquiry"
-    secondaryLabel="Talk to our engineers"
+    primaryHref="mailto:info@ibe.engineering?subject=Project%20inquiry"
+    primaryLabel="Talk to our engineers"
+    secondaryHref="/services"
+    secondaryLabel="See services"
   />
 </Base>
 
@@ -134,6 +147,25 @@ import CtaStrip from '../components/CtaStrip.astro';
   .founder__bio p {
     color: var(--color-ink-muted);
     line-height: var(--lh-body);
+  }
+
+  .rebrand-note-section {
+    padding-block: 0;
+  }
+
+  .rebrand-note {
+    border: 1px solid var(--color-rule);
+    border-left: 3px solid var(--color-accent);
+    border-radius: var(--radius-md);
+    background: var(--color-surface-alt);
+    padding: var(--s-5) var(--s-6);
+  }
+
+  .rebrand-note p {
+    color: var(--color-ink-muted);
+    line-height: var(--lh-body);
+    font-size: var(--fs-small);
+    max-width: 70ch;
   }
 
   @media (max-width: 860px) {

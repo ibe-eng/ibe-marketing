@@ -76,11 +76,22 @@ const faq = [
 ---
 
 <Base
-  title="IBE Toolbox | Building design and Revit export tools"
-  description="Sketch floor plans, import PDF plan sets, generate framing layouts, and export Revit-ready building packages with the IBE Toolbox. Pay per project — only when you export."
+  title="IBE Toolbox | Private beta"
+  description="The IBE Toolbox — building design and Revit export tools, currently in private beta."
+  noindex
 >
+  <div class="beta-banner">
+    <div class="container">
+      <p>
+        <strong>Private beta.</strong> Access is by invitation. If you have an account,
+        everything below works as usual. Want in? Email
+        <a href="mailto:info@ibe.engineering?subject=Toolbox%20early%20access">info@ibe.engineering</a>.
+      </p>
+    </div>
+  </div>
+
   <Hero
-    eyebrow="The IBE Toolbox"
+    eyebrow="The IBE Toolbox — private beta"
     headlineLead="Pro-grade building tools, "
     underlinedWord="on demand."
     headlineTail=""
@@ -144,12 +155,12 @@ const faq = [
   <section class="section section--alt">
     <div class="container pricing">
       <div>
-        <span class="eyebrow">Pricing</span>
+        <span class="eyebrow">Pricing (beta)</span>
         <h2 class="section__heading">Pay per project — only when you export.</h2>
       </div>
       <div class="pricing__copy">
         <p>
-          No subscription and no seat fees. You set up a project and work in the Toolbox up front,
+          No subscription and no seat fees during the beta. You set up a project and work in the Toolbox up front,
           and you only pay when you export a finished deliverable — a plan set, a model, or a
           Revit bundle.
         </p>
@@ -190,6 +201,27 @@ const faq = [
 </Base>
 
 <style>
+  .beta-banner {
+    background: var(--color-surface-alt);
+    border-bottom: 1px solid var(--color-rule);
+  }
+
+  .beta-banner p {
+    padding-block: var(--s-4);
+    font-size: var(--fs-small);
+    color: var(--color-ink-muted);
+    line-height: var(--lh-body);
+  }
+
+  .beta-banner strong {
+    color: var(--color-accent);
+  }
+
+  .beta-banner a {
+    color: var(--color-accent);
+    font-weight: var(--fw-medium);
+  }
+
   .section__heading {
     margin-top: var(--s-2);
     margin-bottom: var(--s-8);
