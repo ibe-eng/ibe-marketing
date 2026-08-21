@@ -1,7 +1,6 @@
 ---
 const navLinks = [
   { href: '/services', label: 'Services' },
-  { href: '/toolbox', label: 'Toolbox' },
   { href: '/about', label: 'About' },
   { href: '/contact', label: 'Contact' },
 ];
@@ -31,11 +30,10 @@ const isActive = (href: string) => href === current || (href !== '/' && current.
       </ul>
     </nav>
     <a
-      href="https://toolbox.ibe.engineering/toolbox"
+      href="mailto:info@ibe.engineering?subject=Project%20inquiry"
       class="btn btn--primary site-header__cta"
-      rel="noopener"
     >
-      Open the Toolbox
+      Talk to our engineers
     </a>
 
     <details class="site-header__mobile-menu">
@@ -44,7 +42,7 @@ const isActive = (href: string) => href === current || (href !== '/' && current.
         {navLinks.map((link) => (
           <a href={link.href} aria-current={isActive(link.href) ? 'page' : undefined}>{link.label}</a>
         ))}
-        <a href="https://toolbox.ibe.engineering/toolbox" rel="noopener">Open the Toolbox</a>
+        <a href="mailto:info@ibe.engineering?subject=Project%20inquiry">Talk to our engineers</a>
       </nav>
     </details>
   </div>
