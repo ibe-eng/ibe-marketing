@@ -110,6 +110,18 @@ const socialImage = new URL(image, Astro.site).toString();
       person_profiles: 'identified_only',
       cross_subdomain_cookie: true,
     });
+
+    const campaign = new URLSearchParams(window.location.search);
+    if (
+      campaign.get('utm_source') === 'business_card' &&
+      campaign.get('utm_medium') === 'qr'
+    ) {
+      posthog.capture('business_card_qr_scanned', {
+        campaign: campaign.get('utm_campaign'),
+        card: campaign.get('utm_content'),
+        destination_path: window.location.pathname,
+      });
+    }
     }
   </script>
   <body>
