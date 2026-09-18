@@ -1,6 +1,5 @@
 ---
-const destination =
-  '/?utm_source=business_card&utm_medium=qr&utm_campaign=business_card&utm_content=tyler_wilson';
+const destination = '/';
 ---
 
 <!doctype html>
@@ -9,7 +8,6 @@ const destination =
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="robots" content="noindex, nofollow" />
-    <meta http-equiv="refresh" content={`0;url=${destination}`} />
     <link rel="canonical" href="https://ibe.engineering/" />
     <title>Integrated Building Engineering</title>
   </head>
@@ -18,6 +16,21 @@ const destination =
       Continuing to <a href={destination}>Integrated Building Engineering</a>…
     </p>
     <script is:inline define:vars={{ destination }}>
+      try {
+        sessionStorage.setItem(
+          'ibe_qr_attribution',
+          JSON.stringify({
+            source: 'business_card',
+            medium: 'qr',
+            campaign: 'business_card',
+            card: 'tyler_wilson',
+            scanned_at: Date.now(),
+          })
+        );
+      } catch (_) {
+        // If storage is unavailable, still complete the redirect.
+      }
+
       window.location.replace(destination);
     </script>
   </body>

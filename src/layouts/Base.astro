@@ -111,16 +111,39 @@ const socialImage = new URL(image, Astro.site).toString();
       cross_subdomain_cookie: true,
     });
 
-    const campaign = new URLSearchParams(window.location.search);
+    let qrAttribution = null;
+    try {
+      const stored = sessionStorage.getItem('ibe_qr_attribution');
+      if (stored) {
+        qrAttribution = JSON.parse(stored);
+        sessionStorage.removeItem('ibe_qr_attribution');
+      }
+    } catch (_) {
+      qrAttribution = null;
+    }
+
     if (
-      campaign.get('utm_source') === 'business_card' &&
-      campaign.get('utm_medium') === 'qr'
+      qrAttribution?.source === 'business_card' &&
+      qrAttribution?.medium === 'qr'
     ) {
       posthog.capture('business_card_qr_scanned', {
-        campaign: campaign.get('utm_campaign'),
-        card: campaign.get('utm_content'),
+        campaign: qrAttribution.campaign,
+        card: qrAttribution.card,
         destination_path: window.location.pathname,
+        scanned_at: qrAttribution.scanned_at,
       });
+    } else {
+      const campaign = new URLSearchParams(window.location.search);
+      if (
+        campaign.get('utm_source') === 'business_card' &&
+        campaign.get('utm_medium') === 'qr'
+      ) {
+        posthog.capture('business_card_qr_scanned', {
+          campaign: campaign.get('utm_campaign'),
+          card: campaign.get('utm_content'),
+          destination_path: window.location.pathname,
+        });
+      }
     }
     }
   </script>
