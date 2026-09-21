@@ -28,31 +28,29 @@ const faq = [
   description="Integrated Building Engineering provides coordinated HVAC design, plumbing design, and BIM coordination for AEC firms and construction teams — streamlined by custom software and automation built in-house."
 >
   <Hero
-    eyebrow="Integrated building engineering"
-    headlineLead=""
-    underlinedWord="Coordinated"
-    headlineTail=" engineering.<br />Built for the field."
-    sub="IBE is the engineering practice behind coordinated, constructable buildings — HVAC and plumbing design, BIM coordination, and Revit-native deliverables, streamlined by software we build in-house."
+    eyebrow="HVAC &amp; plumbing engineering"
+    headlineLead="Field-ready design &amp;<br />coordination for<br />jobsite "
+    underlinedWord="success."
+    headlineTail=""
+    sub="Connected design and coordination from the first model to construction. HVAC, plumbing, and coordinated build sets that help teams reduce rework and plan installation."
     primaryHref="mailto:info@ibe.engineering?subject=Project%20inquiry"
-    primaryLabel="Talk to our engineers"
-    secondaryHref="/services"
-    secondaryLabel="See services"
+    primaryLabel="Start your project"
   >
     <figure slot="visual" class="hero-illustration">
       <a href="/images/trw-coordination-model.webp" aria-label="View the full coordination model image">
         <img src="/images/trw-coordination-model.webp" alt="3D coordination model showing pipework, equipment, and overhead structure" width="960" height="1442" fetchpriority="high" />
       </a>
-      <figcaption>Coordinated systems, ready for a closer look.</figcaption>
     </figure>
   </Hero>
 
-  <section class="section section--alt">
+  <section class="section coordination-context">
     <div class="container outcome-intro">
+      <img src="/images/trw-coordination-context.webp" alt="Illustration of a construction team reviewing conflicting building-system routes" width="900" height="900" loading="lazy" />
       <div>
-        <span class="eyebrow">Why coordination matters</span>
-        <h2>Resolve the details before they reach the jobsite.</h2>
+        <h2>The cost of uncoordinated design.</h2>
+        <div class="coordination-point"><h3>Field conflicts become rework.</h3><p>Review routes, clearances, and installation access before crews arrive.</p></div>
+        <div class="coordination-point"><h3>Late answers disrupt schedules.</h3><p>Resolve coordination questions during design so teams can plan the work with confidence.</p></div>
       </div>
-      <p>Conflicting layouts turn into field revisions, RFIs, and installation delays. We bring HVAC, plumbing, architecture, and structure into the same conversation early, so the design is easier to build.</p>
     </div>
   </section>
 
@@ -98,9 +96,9 @@ const faq = [
       <h2 class="section__heading">Our coordinated design tiers.</h2>
       <div class="tier-grid">
         {[
-          {number: '01', title: 'Permit design', image: 'permit', height: 892, text: 'Documentation for permitting, with HVAC and plumbing planned around architecture and structure. Further coordination with other trades happens in the field.'},
-          {number: '02', title: 'For construction', image: 'construction', height: 1003, text: 'Detailed construction documents with major systems coordinated across trades. Field coordination remains part of installation.'},
-          {number: '03', title: 'Fully coordinated', image: 'coordinated', height: 1173, text: 'Detailed system routing and elevations supported by 3D coordination, with conflicts reviewed before construction.'},
+          {number: '1', title: 'Permit design', image: 'permit', height: 892, text: 'Documentation for permitting, with HVAC and plumbing planned around architecture and structure. Further coordination with other trades happens in the field.'},
+          {number: '2', title: 'For construction', image: 'construction', height: 1003, text: 'Detailed construction documents with major systems coordinated across trades. Field coordination remains part of installation.'},
+          {number: '3', title: 'Fully coordinated', image: 'coordinated', height: 1173, text: 'Detailed system routing and elevations supported by 3D coordination, with conflicts reviewed before construction.'},
         ].map((tier) => (
           <article class="tier-card">
             <span class="eyebrow">Tier {tier.number}</span>
@@ -113,9 +111,10 @@ const faq = [
         ))}
       </div>
       <div class="estimating-strip">
-        <div><span class="eyebrow">Additional support</span><h3>Design estimating</h3><p>Model-based quantities and early estimating support help connect design decisions with construction cost.</p></div>
-        <a href="/contact" class="btn btn--primary">Discuss your project</a>
+        <div class="estimating-copy"><span class="eyebrow">Additional service</span><h3>Design estimating</h3><p>Model-based quantities and early estimating support help connect design decisions with construction cost, so scope and budget can develop together.</p></div>
+        <figure><img src="/images/trw-estimating.webp" alt="Concept illustration of a building model, quantity takeoff, and estimate sheets" width="900" height="623" loading="lazy" /><figcaption>Estimating workflow illustration.</figcaption></figure>
       </div>
+      <div class="tier-cta"><a href="/contact" class="btn btn--primary">Contact us to start your project</a></div>
     </div>
   </section>
 
@@ -178,7 +177,7 @@ const faq = [
 <style>
   .hero-illustration {
     min-width: 0;
-    width: min(100%, 346px);
+    width: min(100%, 360px);
     justify-self: center;
   }
 
@@ -220,23 +219,41 @@ const faq = [
     gap: var(--s-3);
   }
   .offering-card p, .outcome-grid p, .outcome-intro p { color: var(--color-ink-muted); }
-  .tier-card { min-width: 0; display: grid; align-content: start; gap: var(--s-4); }
-  .tier-card .eyebrow { color: var(--color-accent); }
-  .tier-card img { width: 100%; height: auto; display: block; border-radius: var(--radius-md); }
+  .tier-card { min-width: 0; display: grid; align-content: start; gap: var(--s-6); padding: var(--s-8); background: #242424; border-radius: 18px; }
+  .tier-card .eyebrow, .estimating-copy .eyebrow { width: fit-content; padding: var(--s-2) var(--s-3); border-radius: var(--radius-sm); background: var(--color-accent); color: white; }
+  .tier-card h3, .estimating-copy h3 { font-size: clamp(1.4rem, 2vw, 1.875rem); }
+  .tier-card img { width: 100%; height: auto; aspect-ratio: 6 / 5; object-fit: cover; display: block; border-radius: 14px; }
   .tier-card a { align-self: start; }
   .tier-card p { color: #ccc; }
-  .outcome-intro { display: grid; grid-template-columns: 1fr 1fr; gap: var(--s-10); align-items: center; }
+  .outcome-intro { display: grid; grid-template-columns: 1fr 2fr; gap: var(--s-10); align-items: center; }
   .outcome-intro h2 { margin-top: var(--s-3); }
   .outcome-grid { margin-bottom: var(--s-8); }
   .outcome-grid h3 { margin-bottom: var(--s-3); }
-  .estimating-strip { display: flex; justify-content: space-between; align-items: center; gap: var(--s-8); margin-top: var(--s-10); padding-top: var(--s-8); border-top: 1px solid #444; }
-  .estimating-strip h3 { margin-block: var(--s-3); }
-  .estimating-strip p { max-width: 60ch; color: #ccc; }
-  .estimating-strip .btn { flex-shrink: 0; }
+  .estimating-strip { display: grid; grid-template-columns: 2fr 1fr; gap: var(--s-6); margin-top: var(--s-6); }
+  .estimating-copy { padding: var(--s-8); border-radius: 18px; background: #242424; }
+  .estimating-copy h3 { margin-block: var(--s-6); }
+  .estimating-copy p { color: #ccc; }
+  .estimating-strip figure { min-width: 0; }
+  .estimating-strip img { display: block; width: 100%; height: auto; border-radius: 18px; }
+  .estimating-strip figcaption { font-size: var(--fs-small); color: #ccc; margin-top: var(--s-2); }
+  .tier-cta { text-align: center; margin-top: var(--s-10); }
+  .tier-cta .btn { padding: var(--s-5) var(--s-8); }
+  .outcome-intro > img { width: 100%; height: auto; border-radius: 18px; }
+  .coordination-point { margin-top: var(--s-6); padding-top: var(--s-6); }
+  .coordination-point + .coordination-point { border-top: 1px solid var(--color-rule); }
+  .coordination-point h3 { color: var(--color-accent); font-size: clamp(1.25rem, 2.5vw, 1.875rem); margin-bottom: var(--s-3); }
+  :global(.hero--visual .hero__copy) { text-align: center; justify-items: center; }
+  :global(.hero--visual .hero__ctas) { justify-content: center; }
+  :global(.hero--visual .hero__copy > .eyebrow) { padding: var(--s-2) var(--s-3); background: var(--color-surface-alt); border-radius: var(--radius-sm); }
+  @media (min-width: 980px) {
+    :global(.hero--visual .hero__inner) { grid-template-columns: minmax(0, 2fr) minmax(0, 1fr); }
+    :global(.hero--visual .hero__headline) { font-size: clamp(2.5rem, 3.8vw, 3.5rem); }
+  }
   #design-tiers { scroll-margin-top: 90px; }
   @media (max-width: 980px) {
     .offering-grid, .tier-grid, .outcome-grid, .outcome-intro { grid-template-columns: 1fr; }
-    .estimating-strip { align-items: flex-start; flex-direction: column; }
+    .estimating-strip { grid-template-columns: 1fr; }
+    .tier-card, .estimating-copy { padding: var(--s-6); }
   }
 
   .path-card__more {

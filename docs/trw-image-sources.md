@@ -36,3 +36,17 @@ Compared the live TRW homepage again. Reused its content sequence: coordination 
 Removed the hero image's oversized bordered contain-box. Its link, image, and caption now follow the natural portrait width; simplified the caption. Services drawing previews now use their native proportions without artificial white gutters or outlines; photos retain a consistent crop. The source assets are unchanged. Home tier drawings retain full-size links.
 
 Node 20 build passes. Home and Services checked at actual viewport widths 320, 768, and 1440: no horizontal overflow or offscreen headings/cards. Design-tier anchor and full-size drawing navigation verified. Desktop and phone layout screenshots reviewed.
+
+## Screenshot references — 2026-09-21
+
+Matched the user's supplied Home, design-tier, Services, and About references: centered hero copy, single project CTA, natural portrait image; padded charcoal tier cards with red badges and consistent cropped previews; estimating panel and contextual image; native details/summary service scopes; two-column About narrative with original community logos. Homepage previews link to uncropped full-size drawings. The previously approved marker stroke is retained.
+
+Reused existing Astro shell, Hero, CTA, brand palette, local images, and the repository's native details/summary approach. No new domain concept or JavaScript dependency. Service scope text was adapted from the live TRW Services page; unverified coordination percentages and savings figures were not reproduced. About retains IBE rebrand and tool-development context without adding new licensing claims.
+
+Additional image sources (observed on the old site):
+- trw-ashrae.webp: https://onecdn.io/media/a838e760-e006-4033-a62d-15ebf8f0f740/lg — About community logo, 900 × 273.
+- trw-ace.webp: https://onecdn.io/media/604769cd-a1d7-4962-b230-a7c60bd92891/lg — About community logo, 900 × 296.
+- trw-coordination-context.webp: https://onecdn.io/media/f1d4b3d3-8ac8-4cfc-940b-2fcc211aa039/xlg — illustrative conflict scene, 900 × 900; not a documented project photo.
+- trw-estimating.webp: https://onecdn.io/media/a5315f68-f00b-4ead-a7bb-943618c00a38/xlg — estimating concept illustration, 900 × 623; figures are illustrative, not a project estimate.
+
+Validation: Node 20 build passes for all nine routes. Home, Services, About checked at actual 320, 768, and 1440 px viewport widths: no horizontal overflow, offscreen headings/cards, or broken loaded images. Construction and fully coordinated service panels open and close correctly. Desktop Home/About and mobile Services reviewed visually.

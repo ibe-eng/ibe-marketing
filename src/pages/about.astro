@@ -1,90 +1,30 @@
 ---
 import Base from '../layouts/Base.astro';
-import Hero from '../components/Hero.astro';
 import CtaStrip from '../components/CtaStrip.astro';
 ---
 
 <Base
-  title="About IBE | Engineering practice that builds its own tools"
-  description="Integrated Building Engineering is a New Hampshire engineering practice that builds the software tools it uses on real coordinated projects."
+  title="About IBE | Coordinated building engineering"
+  description="A New Hampshire engineering practice focused on coordinated HVAC, plumbing, and construction-ready system design, supported by tools we build in-house."
 >
-  <Hero
-    eyebrow="About IBE"
-    headlineLead="Software and services from working "
-    underlinedWord="engineers."
-    headlineTail=""
-    sub="Integrated Building Engineering is a New Hampshire engineering practice. We design coordinated HVAC, plumbing, and BIM deliverables — and we build the software we wished existed while doing it."
-  />
-
-  <section class="section rebrand-note-section">
-    <div class="container">
-      <aside class="rebrand-note">
-        <p>
-          IBE is the new name for T.R.W. Design, LLC — the same New Hampshire engineering
-          practice and the same engineers, now with the software we build under one roof.
-          Nothing changes for existing clients or engagements.
-        </p>
-      </aside>
-    </div>
-  </section>
-
-  <section class="section section--alt">
-    <div class="container about-grid">
-      <article>
-        <span class="eyebrow">Our approach</span>
-        <h2>The tools come from the work.</h2>
-        <p>
-          Every piece of software we run started as something we built to make our own
-          coordination faster and more reliable — automated extraction, Revit workflows,
-          reality capture, custom design tools. Once a workflow proves itself on real projects,
-          we roll it out gradually, starting with partner teams in private beta.
-        </p>
-        <p>
-          That order matters. We don't ship workflows we don't use ourselves, and engineering
-          judgment always stays with qualified professionals — the software removes repetitive
-          manual work, not accountability.
-        </p>
-      </article>
-
-      <article>
-        <span class="eyebrow">Who we serve</span>
-        <h2>Pros first, builders welcome.</h2>
-        <p>
-          We work with engineering firms, contractors, developers, and BIM coordinators who need
-          coordinated, constructable deliverables. We also build for remodelers, estimators, and
-          designers who need permit-ready outputs without becoming full-time Revit operators.
-        </p>
-      </article>
-    </div>
-  </section>
-
   <section class="section">
-    <div class="container founder">
-      <div class="founder__identity">
-        <span class="eyebrow">Founder</span>
-        <h2>Tyler Wilson</h2>
-        <p>Engineering judgment.<br />Field-ready thinking.</p>
-      </div>
-      <div class="founder__bio">
-        <p>
-          Tyler Wilson is the founder of IBE, building on years of mechanical and plumbing design
-          and BIM coordination. His work centers
-          on coordinated, field-ready documentation across every trade: HVAC, plumbing, sheet
-          metal and ductwork, electrical, and fire protection, modeled clash-free in 2D and 3D
-          Revit so crews keep moving on site.
-        </p>
-        <p>
-          He started IBE to close the gap between how building systems are designed and how they
-          actually get built — turning the repetitive parts of coordination into software so
-          engineers can spend their time on judgment, not redraws.
-        </p>
-        <p>
-          Tyler is an ASHRAE board member and serves on the executive board of the ACE Mentor
-          Program of New Hampshire as treasurer, helping bring the next generation into the AEC
-          industry.
-        </p>
-        {/* TODO(Tyler): add a portrait (public/images) and, once licensed, PE details. */}
-      </div>
+    <div class="container about-story">
+      <h1>About us</h1>
+      <article>
+        <h2>Raising the standard for coordinated, constructable system design.</h2>
+        <p>Our founder, Tyler Wilson, began in mechanical and plumbing design and BIM coordination. The work brought together system design, equipment selection, duct and pipe layouts, and construction documents—and revealed a recurring problem: systems designed in isolation push conflicts into the field.</p>
+        <p>IBE was built to close that gap. HVAC and plumbing remain our core disciplines, supported by coordination across architecture, structure, and building-system trades. Connected models help teams plan, sequence, and build with a clearer understanding of the work.</p>
+        <p>Based in New Hampshire and serving teams across the Northeast, we work with architects, contractors, developers, and engineering firms that need practical, coordinated deliverables and direct engineer involvement.</p>
+        <aside class="rebrand-note">IBE is the new name for T.R.W. Design, LLC—the same engineering practice and the same engineers. Existing clients and engagements continue with the same team.</aside>
+        <p>We also build the tools behind the work. Revit automation, design and extraction workflows, and reality capture help reduce repetitive tasks so engineers can focus on judgment and coordination. We use these tools on our own projects before introducing them to partner teams.</p>
+        <p>Our commitment extends beyond project work. Tyler serves as an ASHRAE board member and treasurer on the executive board of the ACE Mentor Program of New Hampshire, supporting mentorship and exposure to real engineering for the next generation of AEC professionals.</p>
+        <p>The goal stays simple: deliver coordinated systems ready for construction, support the field, and strengthen the AEC industry.</p>
+        <p class="about-motto">Plan Well. Build Well.</p>
+      </article>
+    </div>
+    <div class="container community-logos" aria-label="Community affiliations">
+      <img src="/images/trw-ashrae.webp" alt="ASHRAE Granite State Chapter" width="900" height="273" loading="lazy" />
+      <img src="/images/trw-ace.webp" alt="ACE Mentor Program — Architecture, Construction, Engineering" width="900" height="296" loading="lazy" />
     </div>
   </section>
 
@@ -100,83 +40,14 @@ import CtaStrip from '../components/CtaStrip.astro';
 </Base>
 
 <style>
-  .about-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: var(--s-10);
-  }
-
-  .about-grid article {
-    display: grid;
-    gap: var(--s-4);
-    align-content: start;
-  }
-
-  .about-grid h2 {
-    font-size: var(--fs-h2);
-  }
-
-  .about-grid p {
-    color: var(--color-ink-muted);
-    line-height: var(--lh-body);
-  }
-
-  .founder {
-    display: grid;
-    grid-template-columns: 280px 1fr;
-    gap: var(--s-10);
-    align-items: start;
-  }
-
-  .founder__identity {
-    display: grid;
-    gap: var(--s-4);
-    border-top: 3px solid var(--color-accent);
-    padding-top: var(--s-6);
-  }
-
-  .founder__identity p {
-    color: var(--color-ink-muted);
-  }
-
-  .founder__bio {
-    display: grid;
-    gap: var(--s-4);
-  }
-
-  .founder__identity h2 {
-    font-size: var(--fs-h2);
-  }
-
-  .founder__bio p {
-    color: var(--color-ink-muted);
-    line-height: var(--lh-body);
-  }
-
-  .rebrand-note-section {
-    padding-top: 0;
-    padding-bottom: var(--s-12);
-  }
-
-  .rebrand-note {
-    border: 1px solid var(--color-rule);
-    border-left: 3px solid var(--color-accent);
-    border-radius: var(--radius-md);
-    background: var(--color-surface-alt);
-    padding: var(--s-5) var(--s-6);
-  }
-
-  .rebrand-note p {
-    color: var(--color-ink-muted);
-    line-height: var(--lh-body);
-    font-size: var(--fs-small);
-    max-width: 70ch;
-  }
-
-  @media (max-width: 860px) {
-    .about-grid,
-    .founder {
-      grid-template-columns: 1fr;
-    }
-  }
+  .about-story { display: grid; grid-template-columns: 1fr 3fr; gap: var(--s-10); align-items: start; }
+  .about-story h1 { font-size: clamp(2.5rem, 4vw, 3rem); line-height: var(--lh-tight); }
+  .about-story article { display: grid; gap: var(--s-6); }
+  .about-story h2 { max-width: 34ch; }
+  .about-story p { max-width: 75ch; color: var(--color-ink-muted); }
+  .rebrand-note { padding-left: var(--s-5); border-left: 3px solid var(--color-accent); color: var(--color-ink-muted); }
+  .about-motto { font-weight: var(--fw-medium); }
+  .community-logos { display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: var(--s-10); margin-top: var(--s-12); }
+  .community-logos img { display: block; width: min(100%, 360px); height: auto; }
+  @media (max-width: 860px) { .about-story { grid-template-columns: 1fr; } }
 </style>
