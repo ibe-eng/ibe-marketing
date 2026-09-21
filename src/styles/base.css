@@ -94,12 +94,10 @@ p {
   padding-inline: var(--gutter);
 }
 
-.section {
-  padding-block: calc(2 * clamp(var(--s-8), 3vw, var(--s-10)));
-}
-
+/* Adjacent sections contribute half of the 64–80px content gap each. */
+.section,
 .hero {
-  padding-block: clamp(var(--s-8), 3vw, var(--s-10)) 0;
+  padding-block: clamp(var(--s-8), 3vw, var(--s-10));
 }
 
 .section--alt {
