@@ -94,9 +94,12 @@ p {
   padding-inline: var(--gutter);
 }
 
-.section,
+.section {
+  padding-block: calc(2 * clamp(var(--s-8), 3vw, var(--s-10)));
+}
+
 .hero {
-  padding-block: clamp(var(--s-8), 3vw, var(--s-10));
+  padding-block: clamp(var(--s-8), 3vw, var(--s-10)) 0;
 }
 
 .section--alt {
