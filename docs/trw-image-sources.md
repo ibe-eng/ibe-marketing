@@ -1,5 +1,7 @@
 # TRW Design image migration — 2026-09-21
 
+Visible watermark cleanup: `trw-coordination-context.webp` was edited with the built-in image tool to remove the bottom-right Gemini sparkle and fill it with concrete floor texture. Prompt: remove only the small white four-point watermark; preserve the scene, composition, people, pipes, lighting, and existing sign text. Still presented as an illustration. The estimating, fabrication, and field-tablet assets were inspected and had no visible Gemini sparkle.
+
 User-supplied addition: `ibe-building-coordination.webp` comes from the coordination model screenshot supplied in this conversation (`codex-clipboard-91b8804e-b57e-49ef-b3cb-091aed0c7eb9.png`). Converted to WebP at its original 2873 × 1926 resolution without cropping. Retained for a future placement at the user's request; no project name or location inferred.
 
 `ibe-coordination-detail.webp` comes from the user's subsequent close-up (`codex-clipboard-23ad4fca-581e-49b3-a2a2-aef2b400488c.png`). Converted to WebP at its original 1637 × 1556 resolution without cropping. Replaces the wide view in the Services hero, with a full-resolution link.
