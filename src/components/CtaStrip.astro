@@ -28,7 +28,7 @@ const {
 } = Astro.props;
 ---
 
-<section class="section section--dark cta-strip">
+<section class="section cta-strip">
   <div class="container cta-strip__inner">
     <h2 class="cta-strip__tag">{taglineLead && taglineWord ? (
         <Fragment><Fragment set:html={taglineLead} /><RedOvalUnderline word={taglineWord} /><Fragment set:html={taglineTail} /></Fragment>
@@ -45,6 +45,12 @@ const {
 </section>
 
 <style>
+  .cta-strip {
+    background: var(--color-bg);
+    color: var(--color-ink);
+    border-top: 1px solid var(--color-rule);
+  }
+
   .cta-strip__inner {
     display: grid;
     gap: var(--s-8);
