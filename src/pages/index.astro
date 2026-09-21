@@ -42,25 +42,93 @@ const faq = [
       <a href="/images/trw-coordination-model.webp" aria-label="View the full coordination model image">
         <img src="/images/trw-coordination-model.webp" alt="3D coordination model showing pipework, equipment, and overhead structure" width="960" height="1442" fetchpriority="high" />
       </a>
-      <figcaption>Coordination in detail. <span>A model view from our TRW Design work. Select to view full size.</span></figcaption>
+      <figcaption>Coordinated systems, ready for a closer look.</figcaption>
     </figure>
   </Hero>
 
   <section class="section section--alt">
-    <div class="container split-grid">
-      <a class="path-card" href="/services">
-        <span class="eyebrow">Services</span>
-        <h2>I need engineering services.</h2>
-        <p>HVAC design, plumbing design, BIM coordination, clash detection, and Revit-native deliverables.</p>
-        <span class="path-card__more">See services <span aria-hidden="true">→</span></span>
-      </a>
+    <div class="container outcome-intro">
+      <div>
+        <span class="eyebrow">Why coordination matters</span>
+        <h2>Resolve the details before they reach the jobsite.</h2>
+      </div>
+      <p>Conflicting layouts turn into field revisions, RFIs, and installation delays. We bring HVAC, plumbing, architecture, and structure into the same conversation early, so the design is easier to build.</p>
+    </div>
+  </section>
 
-      <a class="path-card" href="/about">
-        <span class="eyebrow">Technology</span>
-        <h2>Engineering at the cutting edge.</h2>
-        <p>Custom software, Revit automation, reality capture, and streamlined design-to-field workflows — built in-house and proven on real coordinated projects.</p>
-        <span class="path-card__more">How we work <span aria-hidden="true">→</span></span>
-      </a>
+  <section class="section">
+    <div class="container">
+      <span class="eyebrow">Design + coordination</span>
+      <h2 class="section__heading">One workflow, from design to the field.</h2>
+      <div class="offering-grid">
+        <article class="offering-card">
+          <img src="/images/trw-spooling.webp" alt="Fabricated pipe spools arranged in a workshop" width="1200" height="799" loading="lazy" />
+          <div class="offering-card__copy">
+            <span class="eyebrow">Expanded services</span>
+            <h3>Fabrication &amp; spooling</h3>
+            <p>Detailed models and spool documentation to support off-site fabrication and practical installation sequences.</p>
+            <a href="/services" class="path-card__more">Explore fabrication support →</a>
+          </div>
+        </article>
+        <article class="offering-card">
+          <img src="/images/trw-construction-set.webp" alt="Detailed HVAC construction drawing" width="1920" height="1003" loading="lazy" />
+          <div class="offering-card__copy">
+            <span class="eyebrow">Core offering</span>
+            <h3>Coordinated build sets</h3>
+            <p>HVAC and plumbing design, construction documents, and coordinated models built around the needs of your project.</p>
+            <a href="#design-tiers" class="path-card__more">Compare design tiers →</a>
+          </div>
+        </article>
+        <article class="offering-card">
+          <img src="/images/trw-ar.webp" alt="Workers reviewing a building model on a tablet" width="1200" height="800" loading="lazy" />
+          <div class="offering-card__copy">
+            <span class="eyebrow">Expanded services</span>
+            <h3>AR jobsite integration</h3>
+            <p>Model visualization and augmented reality workflows that help teams understand the design where the work happens.</p>
+            <a href="/services" class="path-card__more">Explore field workflows →</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--dark" id="design-tiers">
+    <div class="container">
+      <span class="eyebrow">Choose the right level of detail</span>
+      <h2 class="section__heading">Our coordinated design tiers.</h2>
+      <div class="tier-grid">
+        {[
+          {number: '01', title: 'Permit design', image: 'permit', height: 892, text: 'Documentation for permitting, with HVAC and plumbing planned around architecture and structure. Further coordination with other trades happens in the field.'},
+          {number: '02', title: 'For construction', image: 'construction', height: 1003, text: 'Detailed construction documents with major systems coordinated across trades. Field coordination remains part of installation.'},
+          {number: '03', title: 'Fully coordinated', image: 'coordinated', height: 1173, text: 'Detailed system routing and elevations supported by 3D coordination, with conflicts reviewed before construction.'},
+        ].map((tier) => (
+          <article class="tier-card">
+            <span class="eyebrow">Tier {tier.number}</span>
+            <h3>{tier.title}</h3>
+            <a href={`/images/trw-${tier.image}-set.webp`} aria-label={`View full ${tier.title.toLowerCase()} drawing`}>
+              <img src={`/images/trw-${tier.image}-set.webp`} alt={`${tier.title} drawing excerpt from TRW Design`} width="1920" height={tier.height} loading="lazy" />
+            </a>
+            <p>{tier.text}</p>
+          </article>
+        ))}
+      </div>
+      <div class="estimating-strip">
+        <div><span class="eyebrow">Additional support</span><h3>Design estimating</h3><p>Model-based quantities and early estimating support help connect design decisions with construction cost.</p></div>
+        <a href="/contact" class="btn btn--primary">Discuss your project</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--alt">
+    <div class="container">
+      <span class="eyebrow">Outcomes</span>
+      <h2 class="section__heading">Built around a better day in the field.</h2>
+      <div class="outcome-grid">
+        <article><h3>Resolve conflicts early.</h3><p>Review routes, clearances, and access in the model before installation begins.</p></article>
+        <article><h3>Make the details clear.</h3><p>Give teams coordinated views and documentation they can use to plan and sequence the work.</p></article>
+        <article><h3>Keep revisions connected.</h3><p>Use Revit-native workflows and repeatable checks to carry changes through the design.</p></article>
+      </div>
+      <a class="path-card__more" href="/about">How we work →</a>
     </div>
   </section>
 
@@ -110,14 +178,14 @@ const faq = [
 <style>
   .hero-illustration {
     min-width: 0;
+    width: min(100%, 346px);
+    justify-self: center;
   }
 
   .hero-illustration img {
     width: 100%;
-    max-height: 520px;
-    object-fit: contain;
-    background: white;
-    border: 1px solid var(--color-rule);
+    height: auto;
+    display: block;
     border-radius: var(--radius-md);
   }
 
@@ -127,43 +195,48 @@ const faq = [
     color: var(--color-ink-muted);
   }
 
-  .hero-illustration figcaption span {
-    display: block;
-    margin-top: var(--s-1);
-  }
-
-  .split-grid {
+  .offering-grid, .tier-grid, .outcome-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: var(--s-6);
   }
-
-  .path-card {
-    padding: var(--s-8);
+  .offering-card {
+    overflow: hidden;
     border-radius: var(--radius-md);
-    border: 1px solid var(--color-rule);
-    background: var(--color-bg);
-    text-decoration: none;
-    color: inherit;
+    background: var(--color-surface-alt);
     display: grid;
-    gap: var(--s-2);
+    grid-template-rows: auto 1fr;
+  }
+  .offering-card > img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 3 / 2;
+    object-fit: cover;
+  }
+  .offering-card__copy {
+    padding: var(--s-6);
+    display: grid;
     grid-template-rows: auto auto 1fr auto;
-    transition: border-color var(--transition-fast), transform var(--transition-fast);
+    gap: var(--s-3);
   }
-
-  .path-card:hover,
-  .path-card:focus-visible {
-    transform: translateY(-2px);
-    border-color: var(--color-ink);
-  }
-
-  .path-card h2 {
-    margin: var(--s-2) 0 var(--s-1);
-  }
-
-  .path-card p {
-    color: var(--color-ink-muted);
-    line-height: var(--lh-body);
+  .offering-card p, .outcome-grid p, .outcome-intro p { color: var(--color-ink-muted); }
+  .tier-card { min-width: 0; display: grid; align-content: start; gap: var(--s-4); }
+  .tier-card .eyebrow { color: var(--color-accent); }
+  .tier-card img { width: 100%; height: auto; display: block; border-radius: var(--radius-md); }
+  .tier-card a { align-self: start; }
+  .tier-card p { color: #ccc; }
+  .outcome-intro { display: grid; grid-template-columns: 1fr 1fr; gap: var(--s-10); align-items: center; }
+  .outcome-intro h2 { margin-top: var(--s-3); }
+  .outcome-grid { margin-bottom: var(--s-8); }
+  .outcome-grid h3 { margin-bottom: var(--s-3); }
+  .estimating-strip { display: flex; justify-content: space-between; align-items: center; gap: var(--s-8); margin-top: var(--s-10); padding-top: var(--s-8); border-top: 1px solid #444; }
+  .estimating-strip h3 { margin-block: var(--s-3); }
+  .estimating-strip p { max-width: 60ch; color: #ccc; }
+  .estimating-strip .btn { flex-shrink: 0; }
+  #design-tiers { scroll-margin-top: 90px; }
+  @media (max-width: 980px) {
+    .offering-grid, .tier-grid, .outcome-grid, .outcome-intro { grid-template-columns: 1fr; }
+    .estimating-strip { align-items: flex-start; flex-direction: column; }
   }
 
   .path-card__more {
@@ -229,7 +302,6 @@ const faq = [
   }
 
   @media (max-width: 760px) {
-    .split-grid,
     .faq-grid {
       grid-template-columns: 1fr;
     }

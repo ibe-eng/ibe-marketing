@@ -28,3 +28,11 @@ playbook-rev: eco@01af80d
 Scope pass: n/a — no new noun; existing image presentation reused
 Registry: reused cap.branded-html-deliverable (brand reference)
 Followed: repo CLAUDE.md, docs/design-tokens.md, existing Hero and portfolio grid.
+
+## Layout follow-up — 2026-09-21
+
+Compared the live TRW homepage again. Reused its content sequence: coordination rationale, three service offerings, a dark three-tier design comparison, estimating support, and outcomes. Existing IBE FAQ, affiliations, contact routes, Hero, and CTA remain. Source-page performance statistics were not imported as verified claims.
+
+Removed the hero image's oversized bordered contain-box. Its link, image, and caption now follow the natural portrait width; simplified the caption. Services drawing previews now use their native proportions without artificial white gutters or outlines; photos retain a consistent crop. The source assets are unchanged. Home tier drawings retain full-size links.
+
+Node 20 build passes. Home and Services checked at actual viewport widths 320, 768, and 1440: no horizontal overflow or offscreen headings/cards. Design-tier anchor and full-size drawing navigation verified. Desktop and phone layout screenshots reviewed.

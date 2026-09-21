@@ -288,18 +288,16 @@ const extendedServices = [
   }
 
   .portfolio-item {
+    align-content: start;
     display: grid;
     gap: var(--s-3);
   }
 
   .portfolio-item__media {
-    aspect-ratio: 3 / 2;
+    display: block;
     width: 100%;
     height: auto;
-    object-fit: contain;
     border-radius: var(--radius-md);
-    border: 1px solid var(--color-rule);
-    background: var(--color-bg);
   }
 
   .portfolio-item figcaption {
@@ -318,6 +316,7 @@ const extendedServices = [
   }
 
   .portfolio-item__media--photo {
+    aspect-ratio: 3 / 2;
     object-fit: cover;
   }
 
