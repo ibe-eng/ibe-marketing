@@ -1,5 +1,7 @@
 # TRW Design image migration — 2026-09-21
 
+User-supplied addition: `ibe-building-coordination.webp` comes from the coordination model screenshot supplied in this conversation (`codex-clipboard-91b8804e-b57e-49ef-b3cb-091aed0c7eb9.png`). Converted to WebP at its original 2873 × 1926 resolution without cropping. Used in the Services hero with a full-resolution link; no project name or location inferred.
+
 Reuses the existing Hero visual slot and Services portfolio grid. Six images were retrieved from the public TRW Design site at the user's request and locally optimized as WebP. No external image hotlinks, generated project imagery, invented client names, locations, or performance claims were added.
 
 ## Sources
