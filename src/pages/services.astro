@@ -112,25 +112,41 @@ const extendedServices = [
     <div class="container">
       <span class="eyebrow">From design to the field</span>
       <h2 class="section__heading">See how the pieces fit together.</h2>
-      <p class="portfolio-intro">AI-generated concept illustrations of our service areas. For completed project examples, request our portfolio below.</p>
+      <p class="portfolio-intro">Drawing excerpts from our TRW Design work, from permit documentation through detailed coordination. Select an image to view the full-size drawing.</p>
       <div class="portfolio-grid">
         <figure class="portfolio-item">
-          <img class="portfolio-item__media" src="/images/building-systems.webp" alt="Conceptual building cutaway with HVAC and plumbing distribution" width="1536" height="1024" loading="lazy" decoding="async" />
-          <figcaption>HVAC + plumbing design</figcaption>
+          <a href="/images/trw-permit-set.webp" aria-label="View the full permit drawing">
+            <img class="portfolio-item__media" src="/images/trw-permit-set.webp" alt="Permit drawing excerpt showing office HVAC distribution and diffuser schedules" width="1920" height="892" loading="lazy" decoding="async" />
+          </a>
+          <figcaption>Permit set · HVAC design</figcaption>
         </figure>
         <figure class="portfolio-item">
-          <img class="portfolio-item__media" src="/images/service-coordination.webp" alt="Concept illustration of ductwork and pipe routes at separate elevations" width="1536" height="1024" loading="lazy" decoding="async" />
-          <figcaption>BIM + trade coordination</figcaption>
+          <a href="/images/trw-construction-set.webp" aria-label="View the full construction drawing">
+            <img class="portfolio-item__media" src="/images/trw-construction-set.webp" alt="For-construction drawing excerpt with routed building systems and installation notes" width="1920" height="1003" loading="lazy" decoding="async" />
+          </a>
+          <figcaption>For-construction set · Detailed documentation</figcaption>
         </figure>
         <figure class="portfolio-item">
-          <img class="portfolio-item__media" src="/images/design-documentation.webp" alt="Concept illustration of drawing sheets beside a cutaway building model" width="1536" height="1024" loading="lazy" decoding="async" />
-          <figcaption>Coordinated documentation</figcaption>
+          <a href="/images/trw-coordinated-set.webp" aria-label="View the full coordinated drawing">
+            <img class="portfolio-item__media" src="/images/trw-coordinated-set.webp" alt="Coordinated plan showing color-coded ductwork and piping with elevation annotations" width="1920" height="1173" loading="lazy" decoding="async" />
+          </a>
+          <figcaption>Fully coordinated set · Systems and elevations</figcaption>
         </figure>
       </div>
       <p class="portfolio-note">
         Want to see relevant examples for your project type?
         <a href="mailto:info@ibe.engineering?subject=Portfolio%20request">Ask for our portfolio</a>.
       </p>
+      <div class="portfolio-grid portfolio-grid--photos">
+        <figure class="portfolio-item">
+          <img class="portfolio-item__media portfolio-item__media--photo" src="/images/trw-spooling.webp" alt="Fabricated metal pipe spools with flanged connections arranged in a workshop" width="1200" height="799" loading="lazy" decoding="async" />
+          <figcaption>Fabrication and spooling support</figcaption>
+        </figure>
+        <figure class="portfolio-item">
+          <img class="portfolio-item__media portfolio-item__media--photo" src="/images/trw-ar.webp" alt="Two workers viewing a building systems model on a tablet at a jobsite" width="1200" height="800" loading="lazy" decoding="async" />
+          <figcaption>Model visualization in the field</figcaption>
+        </figure>
+      </div>
     </div>
   </section>
 
@@ -280,7 +296,7 @@ const extendedServices = [
     aspect-ratio: 3 / 2;
     width: 100%;
     height: auto;
-    object-fit: cover;
+    object-fit: contain;
     border-radius: var(--radius-md);
     border: 1px solid var(--color-rule);
     background: var(--color-bg);
@@ -294,6 +310,15 @@ const extendedServices = [
   .portfolio-note {
     margin-top: var(--s-6);
     color: var(--color-ink-muted);
+  }
+
+  .portfolio-grid--photos {
+    grid-template-columns: repeat(2, 1fr);
+    margin-top: var(--s-10);
+  }
+
+  .portfolio-item__media--photo {
+    object-fit: cover;
   }
 
   .portfolio-intro {

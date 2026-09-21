@@ -39,8 +39,10 @@ const faq = [
     secondaryLabel="See services"
   >
     <figure slot="visual" class="hero-illustration">
-      <img src="/images/building-systems.webp" alt="Conceptual cutaway showing HVAC and plumbing systems within a commercial building" width="1536" height="1024" fetchpriority="high" />
-      <figcaption>Building systems, considered together. <span>AI-generated concept illustration.</span></figcaption>
+      <a href="/images/trw-coordination-model.webp" aria-label="View the full coordination model image">
+        <img src="/images/trw-coordination-model.webp" alt="3D coordination model showing pipework, equipment, and overhead structure" width="960" height="1442" fetchpriority="high" />
+      </a>
+      <figcaption>Coordination in detail. <span>A model view from our TRW Design work. Select to view full size.</span></figcaption>
     </figure>
   </Hero>
 
@@ -112,6 +114,10 @@ const faq = [
 
   .hero-illustration img {
     width: 100%;
+    max-height: 520px;
+    object-fit: contain;
+    background: white;
+    border: 1px solid var(--color-rule);
     border-radius: var(--radius-md);
   }
 

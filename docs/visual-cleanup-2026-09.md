@@ -9,10 +9,12 @@ Reviewed the live Home, Services, About, and Contact pages. Existing `RedOvalUnd
 - Fit red outlines inside reserved inline space, keep constant stroke weight, prevent circled words from wrapping, and reduce multiword circles to one word.
 - Balance heading wraps, reduce minimum hero type for narrow screens, improve service-card spacing, align homepage card actions, improve affiliation contrast, and expose a keyboard focus ring for the mobile menu.
 - Add a named visual slot to the existing Hero and a more compact homepage headline. Existing service description, SEO title, contact links, and analytics remain.
-- Fill three Services panels with explicitly labeled AI-generated concept illustrations; replace selected-project wording so they are not represented as completed IBE work.
+- Fill the homepage and Services panels with source imagery from TRW Design; see trw-image-sources.md for final assets and provenance.
 - Replace the empty founder portrait box with a finished text identity block; no invented portrait.
 
-## Image provenance
+## Historical concept-image provenance (superseded)
+
+These three generated assets were replaced and removed on 2026-09-21 at the user's request to use TRW Design work and photos. The prompts below are retained as history only. Final imagery and validation are documented in trw-image-sources.md.
 
 Generated with the built-in image generation tool at the user's explicit request. This request supersedes the older placeholder-only guidance in CLAUDE.md/PRD.md for these illustrations. These are conceptual renderings, not real projects, verified engineering details, or product screenshots. Original generations are retained outside the repository; web assets are 1536×1024 WebP, quality 82, with explicit dimensions and lazy loading below the fold. Combined image size: 424,220 bytes.
 
@@ -37,4 +39,3 @@ playbook-rev: eco@01af80d
 Scope pass: ran — existing presentation components; no new domain noun
 Registry: reused cap.branded-html-deliverable (canonical branding reference)
 Followed: playbook scope pass and §4; repo CLAUDE.md and docs/design-tokens.md; explicit user request authorizes generated illustrations over older placeholder-only guidance.
-
