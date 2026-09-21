@@ -35,6 +35,7 @@ const extendedServices = [
   title="IBE Services | Coordinated engineering and BIM workflows"
   description="Coordinated HVAC, plumbing, BIM, Revit, fabrication, and constructability-focused engineering workflows built around field installation efficiency."
 >
+  <div class="services-hero">
   <Hero
     eyebrow="Coordinated engineering services"
     headlineLead="Engineering designed for "
@@ -45,7 +46,15 @@ const extendedServices = [
     primaryLabel="Talk to our engineers"
     secondaryHref="mailto:info@ibe.engineering?subject=Capabilities%20sheet%20request"
     secondaryLabel="Request capabilities sheet"
-  />
+  >
+    <figure slot="visual" class="services-hero__visual">
+      <a href="/images/trw-coordination-model.webp" aria-label="View the full coordination model image">
+        <img src="/images/trw-coordination-model.webp" alt="Coordinated pipework and equipment beneath the building structure in a TRW Design model" width="960" height="1442" fetchpriority="high" />
+      </a>
+      <figcaption>Coordinated in the model. Ready for the field.</figcaption>
+    </figure>
+  </Hero>
+  </div>
 
   <section class="section" id="design-tiers">
     <div class="container design-tiers">
@@ -254,6 +263,40 @@ const extendedServices = [
 </Base>
 
 <style>
+  .services-hero :global(.hero) {
+    padding-block: clamp(var(--s-6), 3vw, var(--s-10)) var(--s-6);
+  }
+
+  .services-hero__visual {
+    min-width: 0;
+    display: grid;
+    gap: var(--s-3);
+  }
+
+  .services-hero__visual a {
+    display: block;
+    overflow: hidden;
+    border-radius: var(--radius-md);
+  }
+
+  .services-hero__visual img {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    object-position: center 55%;
+  }
+
+  .services-hero__visual figcaption {
+    font-size: var(--fs-small);
+    color: var(--color-ink-muted);
+  }
+
+  #design-tiers {
+    padding-top: var(--s-8);
+  }
+
   .design-tiers { display: grid; grid-template-columns: 1fr 2fr; gap: var(--s-10); align-items: start; }
   .design-tiers__intro { display: grid; gap: var(--s-6); }
   .design-tiers__intro h2 { font-size: clamp(2rem, 3.5vw, 3rem); }
