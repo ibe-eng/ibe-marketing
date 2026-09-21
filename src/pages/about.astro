@@ -60,12 +60,12 @@ import CtaStrip from '../components/CtaStrip.astro';
 
   <section class="section">
     <div class="container founder">
-      <div class="founder__portrait" aria-hidden="true">
-        {/* TODO(Tyler): drop a real portrait into public/images and reference it here. */}
-      </div>
-      <div class="founder__bio">
+      <div class="founder__identity">
         <span class="eyebrow">Founder</span>
         <h2>Tyler Wilson</h2>
+        <p>Engineering judgment.<br />Field-ready thinking.</p>
+      </div>
+      <div class="founder__bio">
         <p>
           Tyler Wilson is the founder of IBE, building on years of mechanical and plumbing design
           and BIM coordination. His work centers
@@ -89,8 +89,8 @@ import CtaStrip from '../components/CtaStrip.astro';
   </section>
 
   <CtaStrip
-    taglineLead="Plan Well. "
-    taglineWord="Build Well."
+    taglineLead="Plan Well. Build "
+    taglineWord="Well."
     taglineTail=""
     primaryHref="mailto:info@ibe.engineering?subject=Project%20inquiry"
     primaryLabel="Talk to our engineers"
@@ -128,11 +128,15 @@ import CtaStrip from '../components/CtaStrip.astro';
     align-items: start;
   }
 
-  .founder__portrait {
-    aspect-ratio: 4 / 5;
-    border-radius: var(--radius-md);
-    border: 1px dashed var(--color-rule);
-    background: var(--color-surface-alt);
+  .founder__identity {
+    display: grid;
+    gap: var(--s-4);
+    border-top: 3px solid var(--color-accent);
+    padding-top: var(--s-6);
+  }
+
+  .founder__identity p {
+    color: var(--color-ink-muted);
   }
 
   .founder__bio {
@@ -140,7 +144,7 @@ import CtaStrip from '../components/CtaStrip.astro';
     gap: var(--s-4);
   }
 
-  .founder__bio h2 {
+  .founder__identity h2 {
     font-size: var(--fs-h2);
   }
 
@@ -150,7 +154,8 @@ import CtaStrip from '../components/CtaStrip.astro';
   }
 
   .rebrand-note-section {
-    padding-block: 0;
+    padding-top: 0;
+    padding-bottom: var(--s-12);
   }
 
   .rebrand-note {
@@ -172,10 +177,6 @@ import CtaStrip from '../components/CtaStrip.astro';
     .about-grid,
     .founder {
       grid-template-columns: 1fr;
-    }
-
-    .founder__portrait {
-      max-width: 280px;
     }
   }
 </style>

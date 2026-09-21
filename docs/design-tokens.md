@@ -76,7 +76,7 @@ tray + overlay surfaces. The marketing site does not use them today.
 
 | Token | Value |
 | --- | --- |
-| `ibe-fs-hero` | `clamp(2.5rem, 6vw, 4.5rem)` |
+| `ibe-fs-hero` | `clamp(2rem, 5.6vw, 4.5rem)` |
 | `ibe-fs-h2` | `clamp(1.75rem, 3vw, 2.5rem)` |
 | `ibe-fs-h3` | `1.25rem` |
 | `ibe-fs-body` | `1rem` |

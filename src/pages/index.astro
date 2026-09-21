@@ -1,8 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
 import Hero from '../components/Hero.astro';
-import StatPanel from '../components/StatPanel.astro';
-import Tile from '../components/Tile.astro';
 import CtaStrip from '../components/CtaStrip.astro';
 
 const faq = [
@@ -33,13 +31,18 @@ const faq = [
     eyebrow="Integrated building engineering"
     headlineLead=""
     underlinedWord="Coordinated"
-    headlineTail=" HVAC, plumbing, and BIM design — built for the field."
+    headlineTail=" engineering.<br />Built for the field."
     sub="IBE is the engineering practice behind coordinated, constructable buildings — HVAC and plumbing design, BIM coordination, and Revit-native deliverables, streamlined by software we build in-house."
     primaryHref="mailto:info@ibe.engineering?subject=Project%20inquiry"
     primaryLabel="Talk to our engineers"
     secondaryHref="/services"
     secondaryLabel="See services"
-  />
+  >
+    <figure slot="visual" class="hero-illustration">
+      <img src="/images/building-systems.webp" alt="Conceptual cutaway showing HVAC and plumbing systems within a commercial building" width="1536" height="1024" fetchpriority="high" />
+      <figcaption>Building systems, considered together. <span>AI-generated concept illustration.</span></figcaption>
+    </figure>
+  </Hero>
 
   <section class="section section--alt">
     <div class="container split-grid">
@@ -103,6 +106,26 @@ const faq = [
 </Base>
 
 <style>
+  .hero-illustration {
+    min-width: 0;
+  }
+
+  .hero-illustration img {
+    width: 100%;
+    border-radius: var(--radius-md);
+  }
+
+  .hero-illustration figcaption {
+    margin-top: var(--s-3);
+    font-size: var(--fs-small);
+    color: var(--color-ink-muted);
+  }
+
+  .hero-illustration figcaption span {
+    display: block;
+    margin-top: var(--s-1);
+  }
+
   .split-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -118,6 +141,7 @@ const faq = [
     color: inherit;
     display: grid;
     gap: var(--s-2);
+    grid-template-rows: auto auto 1fr auto;
     transition: border-color var(--transition-fast), transform var(--transition-fast);
   }
 
@@ -167,8 +191,7 @@ const faq = [
   .social-proof__logo {
     font-weight: var(--fw-bold);
     font-size: var(--fs-h3);
-    color: var(--color-ink);
-    opacity: 0.45;
+    color: var(--color-ink-muted);
     letter-spacing: -0.01em;
   }
 

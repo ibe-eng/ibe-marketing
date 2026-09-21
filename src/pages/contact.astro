@@ -64,8 +64,8 @@ import CtaStrip from '../components/CtaStrip.astro';
   </section>
 
   <CtaStrip
-    taglineLead="Plan Well. "
-    taglineWord="Build Well."
+    taglineLead="Plan Well. Build "
+    taglineWord="Well."
     taglineTail=""
     primaryHref="mailto:info@ibe.engineering?subject=Project%20inquiry"
     primaryLabel="Talk to our engineers"
@@ -130,6 +130,7 @@ import CtaStrip from '../components/CtaStrip.astro';
   }
 
   .contact-list a {
+    overflow-wrap: anywhere;
     color: var(--color-accent);
     font-weight: var(--fw-medium);
   }

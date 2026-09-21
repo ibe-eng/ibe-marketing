@@ -48,7 +48,7 @@ const {
   .cta-strip__inner {
     display: grid;
     gap: var(--s-8);
-    grid-template-columns: 1fr auto;
+    grid-template-columns: minmax(0, 1fr) auto;
     align-items: center;
   }
 
@@ -56,12 +56,14 @@ const {
     font-size: clamp(2rem, 4vw, 3rem);
     line-height: var(--lh-tight);
     max-width: 18ch;
+    text-wrap: balance;
   }
 
   .cta-strip__ctas {
     display: flex;
     flex-wrap: wrap;
     gap: var(--s-3);
+    max-width: 28rem;
   }
 
   .cta-strip__ctas .btn {
