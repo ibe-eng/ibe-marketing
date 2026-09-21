@@ -35,7 +35,6 @@ const extendedServices = [
   title="IBE Services | Coordinated engineering and BIM workflows"
   description="Coordinated HVAC, plumbing, BIM, Revit, fabrication, and constructability-focused engineering workflows built around field installation efficiency."
 >
-  <div class="services-hero">
   <Hero
     eyebrow="Coordinated engineering services"
     headlineLead="Engineering designed for "
@@ -54,7 +53,6 @@ const extendedServices = [
       <figcaption>Coordinated in the model. Ready for the field.</figcaption>
     </figure>
   </Hero>
-  </div>
 
   <section class="section" id="design-tiers">
     <div class="container design-tiers">
@@ -263,10 +261,6 @@ const extendedServices = [
 </Base>
 
 <style>
-  .services-hero :global(.hero) {
-    padding-block: clamp(var(--s-6), 3vw, var(--s-10)) var(--s-6);
-  }
-
   .services-hero__visual {
     min-width: 0;
     display: grid;
@@ -291,10 +285,6 @@ const extendedServices = [
   .services-hero__visual figcaption {
     font-size: var(--fs-small);
     color: var(--color-ink-muted);
-  }
-
-  #design-tiers {
-    padding-top: var(--s-8);
   }
 
   .design-tiers { display: grid; grid-template-columns: 1fr 2fr; gap: var(--s-10); align-items: start; }

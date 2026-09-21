@@ -94,8 +94,9 @@ p {
   padding-inline: var(--gutter);
 }
 
-.section {
-  padding-block: clamp(var(--s-12), 8vw, var(--s-24));
+.section,
+.hero {
+  padding-block: clamp(var(--s-8), 3vw, var(--s-10));
 }
 
 .section--alt {
