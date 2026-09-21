@@ -30,7 +30,7 @@ const {
 
 <section class="section cta-strip">
   <div class="container cta-strip__inner">
-    <h2 class="cta-strip__tag">{taglineLead && taglineWord ? (
+    <h2 class="cta-strip__tag">{taglineWord ? (
         <Fragment><Fragment set:html={taglineLead} /><RedOvalUnderline word={taglineWord} /><Fragment set:html={taglineTail} /></Fragment>
       ) : (
         tagline
