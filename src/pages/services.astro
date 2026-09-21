@@ -198,6 +198,11 @@ const extendedServices = [
 </Base>
 
 <style>
+  /* Keep the marker clear of the leading i dot and the y descender. */
+  :global(.hero .hero__headline .oval-wrap) {
+    padding: 0.24em 0.45em 0.18em;
+  }
+
   .philosophy-grid,
   .service-group-grid {
     display: grid;
