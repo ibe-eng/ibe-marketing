@@ -354,6 +354,8 @@ const extendedServices = [
     display: block;
     width: 100%;
     height: auto;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
     border-radius: var(--radius-md);
   }
 
@@ -370,11 +372,6 @@ const extendedServices = [
   .portfolio-grid--photos {
     grid-template-columns: repeat(2, 1fr);
     margin-top: var(--s-10);
-  }
-
-  .portfolio-item__media--photo {
-    aspect-ratio: 3 / 2;
-    object-fit: cover;
   }
 
   .portfolio-intro {
