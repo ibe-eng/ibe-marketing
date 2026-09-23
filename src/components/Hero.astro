@@ -29,37 +29,57 @@ const {
 } = Astro.props;
 ---
 
-<section class="hero">
+<section class:list={['hero', { 'hero--visual': Astro.slots.has('visual') }]}>
   <div class="container hero__inner">
-    <span class="eyebrow">{eyebrow}</span>
-    <h1 class="hero__headline"><Fragment set:html={headlineLead} /><RedOvalUnderline word={underlinedWord} /><Fragment set:html={headlineTail} /></h1>
-    <p class="hero__sub">{sub}</p>
-    {(primaryHref || secondaryHref) && (
-      <div class="hero__ctas">
-        {primaryHref && primaryLabel && (
-          <a href={primaryHref} class="btn btn--primary" rel="noopener">
-            {primaryLabel}
-          </a>
-        )}
-        {secondaryHref && secondaryLabel && (
-          <a href={secondaryHref} class="btn btn--secondary">
-            {secondaryLabel}
-          </a>
-        )}
-      </div>
-    )}
+    <div class="hero__copy">
+      <span class="eyebrow">{eyebrow}</span>
+      <h1 class="hero__headline"><Fragment set:html={headlineLead} /><RedOvalUnderline word={underlinedWord} /><Fragment set:html={headlineTail} /></h1>
+      <p class="hero__sub">{sub}</p>
+      {(primaryHref || secondaryHref) && (
+        <div class="hero__ctas">
+          {primaryHref && primaryLabel && (
+            <a href={primaryHref} class="btn btn--primary" rel="noopener">
+              {primaryLabel}
+            </a>
+          )}
+          {secondaryHref && secondaryLabel && (
+            <a href={secondaryHref} class="btn btn--secondary">
+              {secondaryLabel}
+            </a>
+          )}
+        </div>
+      )}
+    </div>
+    <slot name="visual" />
   </div>
 </section>
 
 <style>
   .hero {
-    padding-block: clamp(var(--s-12), 7vw, var(--s-16));
     background: var(--color-bg);
   }
 
   .hero__inner {
     display: grid;
+    align-items: center;
+    gap: var(--s-10);
+  }
+
+  .hero__copy {
+    display: grid;
     gap: var(--s-6);
+    min-width: 0;
+  }
+
+  @media (min-width: 980px) {
+    .hero--visual .hero__inner {
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+    }
+
+    .hero--visual .hero__headline {
+      font-size: clamp(2.5rem, 4vw, 3.5rem);
+      text-wrap: initial;
+    }
   }
 
   .hero__headline {
@@ -67,6 +87,8 @@ const {
     font-weight: var(--fw-bold);
     line-height: var(--lh-tight);
     letter-spacing: -0.02em;
+    text-wrap: balance;
+    min-width: 0;
   }
 
   .hero__sub {

@@ -53,7 +53,8 @@ a {
 }
 
 a:focus-visible,
-button:focus-visible {
+button:focus-visible,
+summary:focus-visible {
   outline: 2px solid var(--color-accent);
   outline-offset: 3px;
   border-radius: var(--radius-sm);
@@ -64,6 +65,12 @@ h2,
 h3 {
   line-height: var(--lh-tight);
   font-weight: var(--fw-bold);
+}
+
+h1,
+h2,
+h3 {
+  text-wrap: balance;
 }
 
 h2 {
@@ -87,8 +94,10 @@ p {
   padding-inline: var(--gutter);
 }
 
-.section {
-  padding-block: clamp(var(--s-12), 8vw, var(--s-24));
+/* Adjacent sections contribute half of the 64–80px content gap each. */
+.section,
+.hero {
+  padding-block: clamp(var(--s-8), 3vw, var(--s-10));
 }
 
 .section--alt {

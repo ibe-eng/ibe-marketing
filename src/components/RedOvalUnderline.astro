@@ -15,10 +15,10 @@ const { word } = Astro.props;
     focusable="false"
   >
     <path
-      d="M 18,42 C 8,18 60,8 150,8 C 240,8 296,22 290,46 C 285,68 230,76 150,74 C 70,72 22,64 16,46 C 14,38 22,32 38,30"
+      d="M 4,40 C 4,15 60,5 150,5 C 240,5 296,15 296,40 C 296,65 240,75 150,75 C 60,75 4,65 4,40 C 4,25 10,12 22,7"
       fill="none"
       stroke="var(--color-accent)"
-      stroke-width="4"
+      vector-effect="non-scaling-stroke"
       stroke-linecap="round"
       stroke-linejoin="round"
     />
@@ -29,7 +29,9 @@ const { word } = Astro.props;
   .oval-wrap {
     position: relative;
     display: inline-block;
-    padding-inline: 0.05em;
+    /* Reserve the annotation's space in the line, including at wraps. */
+    padding: 0.1em 0.35em;
+    white-space: nowrap;
   }
 
   .oval-word {
@@ -39,16 +41,17 @@ const { word } = Astro.props;
 
   .oval-svg {
     position: absolute;
-    /* SVG is a replaced element: inset alone won't stretch it, so size it
-       explicitly. The flat ellipse converges at its extremes, so the
-       horizontal overshoot must scale with word length (percent-based) for
-       the curve to clear the first/last letters instead of cutting through. */
-    top: -0.52em;
-    left: calc(-15% - 0.2em);
-    width: calc(130% + 0.4em);
-    max-width: none; /* the base.css media reset would clamp the overshoot */
-    height: calc(100% + 1.15em);
+    inset: 0;
+    width: 100%;
+    height: 100%;
     z-index: 0;
+    pointer-events: none;
     overflow: visible;
+  }
+
+  .oval-svg path {
+    /* A bold marker loop with an overlapping finish; scale with the type,
+       not with the SVG's horizontal stretch on longer words. */
+    stroke-width: clamp(3px, 0.09em, 6px);
   }
 </style>

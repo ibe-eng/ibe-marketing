@@ -28,9 +28,9 @@ const {
 } = Astro.props;
 ---
 
-<section class="section section--dark cta-strip">
+<section class="section cta-strip">
   <div class="container cta-strip__inner">
-    <h2 class="cta-strip__tag">{taglineLead && taglineWord ? (
+    <h2 class="cta-strip__tag">{taglineWord ? (
         <Fragment><Fragment set:html={taglineLead} /><RedOvalUnderline word={taglineWord} /><Fragment set:html={taglineTail} /></Fragment>
       ) : (
         tagline
@@ -45,10 +45,16 @@ const {
 </section>
 
 <style>
+  .cta-strip {
+    background: var(--color-bg);
+    color: var(--color-ink);
+    border-top: 1px solid var(--color-rule);
+  }
+
   .cta-strip__inner {
     display: grid;
     gap: var(--s-8);
-    grid-template-columns: 1fr auto;
+    grid-template-columns: minmax(0, 1fr) auto;
     align-items: center;
   }
 
@@ -56,12 +62,14 @@ const {
     font-size: clamp(2rem, 4vw, 3rem);
     line-height: var(--lh-tight);
     max-width: 18ch;
+    text-wrap: balance;
   }
 
   .cta-strip__ctas {
     display: flex;
     flex-wrap: wrap;
     gap: var(--s-3);
+    max-width: 28rem;
   }
 
   .cta-strip__ctas .btn {
