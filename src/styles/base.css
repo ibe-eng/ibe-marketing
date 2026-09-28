@@ -69,8 +69,14 @@ h3 {
 
 h1,
 h2,
-h3 {
+h3,
+h4,
+h5,
+h6 {
   text-wrap: balance;
+  /* Title Case for every heading site-wide (Tyler, 2026-09-28). Uppercase
+     label classes (eyebrows, footer headings) still override this. */
+  text-transform: capitalize;
 }
 
 h2 {
