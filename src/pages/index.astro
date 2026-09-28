@@ -181,6 +181,12 @@ const faq = [
     justify-self: center;
   }
 
+  /* Side-by-side: pin the image to the container's right edge (lines up with
+     the header CTA) so the hero's outer margins match left and right. */
+  @media (min-width: 980px) {
+    .hero-illustration { justify-self: end; }
+  }
+
   .hero-illustration img {
     width: 100%;
     height: auto;
