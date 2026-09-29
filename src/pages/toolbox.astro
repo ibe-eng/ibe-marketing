@@ -1,4 +1,5 @@
 ---
+import { startHref } from '../lib/cta';
 import Base from '../layouts/Base.astro';
 import Hero from '../components/Hero.astro';
 import Tile from '../components/Tile.astro';
@@ -98,7 +99,7 @@ const faq = [
     sub="Browser-based building-design workflows for AEC firms, remodelers, and builders. Sketch floor plans, preview designs in 3D, and export Revit-ready deliverables."
     primaryHref="https://toolbox.ibe.engineering/toolbox"
     primaryLabel="Open the Toolbox"
-    secondaryHref="mailto:info@ibe.engineering?subject=Toolbox%20question"
+    secondaryHref={startHref('toolbox-hero')}
     secondaryLabel="Talk to our engineers"
   />
 
@@ -195,7 +196,7 @@ const faq = [
     taglineTail=""
     primaryHref="https://toolbox.ibe.engineering/toolbox"
     primaryLabel="Open the Toolbox"
-    secondaryHref="mailto:info@ibe.engineering?subject=Toolbox%20question"
+    secondaryHref={startHref('toolbox-cta')}
     secondaryLabel="Talk to our engineers"
   />
 </Base>

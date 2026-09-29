@@ -1,4 +1,5 @@
 ---
+import { ctaOf } from '../lib/cta';
 import RedOvalUnderline from './RedOvalUnderline.astro';
 
 interface Props {
@@ -38,12 +39,12 @@ const {
       {(primaryHref || secondaryHref) && (
         <div class="hero__ctas">
           {primaryHref && primaryLabel && (
-            <a href={primaryHref} class="btn btn--primary" rel="noopener">
+            <a href={primaryHref} data-cta={ctaOf(primaryHref)} class="btn btn--primary" rel="noopener">
               {primaryLabel}
             </a>
           )}
           {secondaryHref && secondaryLabel && (
-            <a href={secondaryHref} class="btn btn--secondary">
+            <a href={secondaryHref} data-cta={ctaOf(secondaryHref)} class="btn btn--secondary">
               {secondaryLabel}
             </a>
           )}

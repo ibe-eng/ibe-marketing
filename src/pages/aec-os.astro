@@ -1,4 +1,5 @@
 ---
+import { startHref } from '../lib/cta';
 import Base from '../layouts/Base.astro';
 import Hero from '../components/Hero.astro';
 import Tile from '../components/Tile.astro';
@@ -127,7 +128,7 @@ const tiers = [
     taglineTail=""
     primaryHref="https://toolbox.ibe.engineering/toolbox"
     primaryLabel="Open the Toolbox"
-    secondaryHref="mailto:info@ibe.engineering?subject=AEC-OS%20team%20tier"
+    secondaryHref={startHref('aec-os-cta')}
     secondaryLabel="Talk to our engineers"
   />
 </Base>

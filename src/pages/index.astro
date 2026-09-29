@@ -1,4 +1,5 @@
 ---
+import { startHref } from '../lib/cta';
 import Base from '../layouts/Base.astro';
 import Hero from '../components/Hero.astro';
 import CtaStrip from '../components/CtaStrip.astro';
@@ -33,7 +34,7 @@ const faq = [
     underlinedWord="success."
     headlineTail=""
     sub="Connected design and coordination from the first model to construction. HVAC, plumbing, and coordinated build sets that help teams reduce rework and plan installation."
-    primaryHref="mailto:info@ibe.engineering?subject=Project%20inquiry"
+    primaryHref={startHref('home-hero')}
     primaryLabel="Start your project"
   >
     <figure slot="visual" class="hero-illustration">
@@ -167,7 +168,7 @@ const faq = [
     taglineLead="Plan Well. "
     taglineWord="Build Well."
     taglineTail=""
-    primaryHref="mailto:info@ibe.engineering?subject=Project%20inquiry"
+    primaryHref={startHref('home-cta')}
     primaryLabel="Talk to our engineers"
     secondaryHref="/contact"
     secondaryLabel="Get in touch"

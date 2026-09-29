@@ -111,6 +111,19 @@ const socialImage = new URL(image, Astro.site).toString();
       cross_subdomain_cookie: true,
     });
 
+    // One delegated listener for every CTA tagged data-cta (see src/lib/cta.ts). Anonymous
+    // events are still captured under person_profiles: 'identified_only'; sendBeacon lets the
+    // event survive the navigation to toolbox.ibe.engineering.
+    document.addEventListener('click', function (event) {
+      var link = event.target instanceof Element ? event.target.closest('a[data-cta]') : null;
+      if (!link) return;
+      posthog.capture(
+        'cta_clicked',
+        { cta: link.dataset.cta, page: window.location.pathname, href: link.href },
+        { transport: 'sendBeacon' }
+      );
+    });
+
     let qrAttribution = null;
     try {
       const stored = sessionStorage.getItem('ibe_qr_attribution');
