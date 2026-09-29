@@ -1,5 +1,5 @@
 ---
-import { startHref } from '../lib/cta';
+import { moreHref, startHref } from '../lib/cta';
 import Base from '../layouts/Base.astro';
 import CtaStrip from '../components/CtaStrip.astro';
 ---
@@ -37,9 +37,14 @@ import CtaStrip from '../components/CtaStrip.astro';
             <span>New Hampshire and the Northeast</span>
           </li>
         </ul>
-        <a href={startHref('contact-card')} data-cta="contact-card" class="btn btn--primary">
-          Start your project
-        </a>
+        <div class="contact-card__ctas">
+          <a href={startHref('contact-card')} data-cta="contact-card" class="btn btn--primary">
+            Start your project
+          </a>
+          <a href={moreHref('contact-more')} data-cta="contact-more" class="btn btn--secondary">
+            More options
+          </a>
+        </div>
       </div>
 
       <div class="contact-aside">
@@ -73,6 +78,12 @@ import CtaStrip from '../components/CtaStrip.astro';
 </Base>
 
 <style>
+  .contact-card__ctas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--s-3);
+  }
+
   .contact-head {
     max-width: 640px;
     display: grid;

@@ -1,12 +1,20 @@
-// The one home for the "start a project" CTA target. Every "Talk to our engineers" /
-// "Start your project" button points here; `cta` names where on the site it was clicked.
-// Points at the public booking page (/b) until the toolbox's /start entry page ships; then
-// change this one line to 'https://toolbox.ibe.engineering/start'.
-export const START_URL = 'https://toolbox.ibe.engineering/b';
+// The one home for where the "start a project" CTAs go. `cta` names where on the site it was
+// clicked, and Base.astro's delegated listener reports it as PostHog `cta_clicked`.
+export const TOOLBOX_URL = 'https://toolbox.ibe.engineering';
 
-export const startHref = (cta: string) => `${START_URL}?src=website&cta=${encodeURIComponent(cta)}`;
+const withSrc = (path: string, cta: string) =>
+  `${TOOLBOX_URL}${path}?src=website&cta=${encodeURIComponent(cta)}`;
 
-// The `data-cta` value for an href: its `cta` param when it points at START_URL, else undefined
-// (Astro omits undefined attributes). Base.astro's delegated listener reports clicks on these.
+// Every "Talk to our engineers" / "Start your project" button: the public booking page.
+export const startHref = (cta: string) => withSrc('/b', cta);
+
+// "More options" (contact page): the toolbox /start ladder — book, leave a number, record a
+// walkthrough, or upload files.
+export const moreHref = (cta: string) => withSrc('/start', cta);
+
+// The `data-cta` value for an href: its `cta` param when it is one of the links above, else
+// undefined (Astro omits undefined attributes).
 export const ctaOf = (href?: string) =>
-  href?.startsWith(START_URL) ? new URL(href).searchParams.get('cta') ?? undefined : undefined;
+  href?.startsWith(`${TOOLBOX_URL}/`) && href.includes('src=website')
+    ? new URL(href).searchParams.get('cta') ?? undefined
+    : undefined;
