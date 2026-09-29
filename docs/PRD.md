@@ -225,7 +225,7 @@ ibe-marketing/
 - **R7** Red oval underline rendered as inline SVG, sits behind the operative word in the hero.
 - **R8** Logo files referenced from `public/images/` (white-red horiz on black header, black-red horiz wherever a light bg hosts the logo).
 - **R9** Header CTA "Open Toolbox" links to `https://toolbox.ibe.engineering`.
-- **R10** ~~Secondary CTA "Talk to our engineers" is a `mailto:info@ibe.engineering` link with a sensible default subject (`?subject=Project%20inquiry`).~~ **Superseded 2026-09-29:** every "Talk to our engineers" / "Start your project" CTA links to `https://toolbox.ibe.engineering/start?src=website&cta=<location>` (base URL in `src/lib/cta.ts`) and fires PostHog `cta_clicked` {cta, page, href} via one delegated `data-cta` listener in `Base.astro`. Email and phone remain as secondary options on `/contact`. See decision log (ibe-marketing).
+- **R10** ~~Secondary CTA "Talk to our engineers" is a `mailto:info@ibe.engineering` link with a sensible default subject (`?subject=Project%20inquiry`).~~ **Superseded 2026-09-29:** every "Talk to our engineers" / "Start your project" CTA links to `https://toolbox.ibe.engineering/b?src=website&cta=<location>` (booking page, interim until the toolbox `/start` page ships; base URL in `src/lib/cta.ts`) and fires PostHog `cta_clicked` {cta, page, href} via one delegated `data-cta` listener in `Base.astro`. Email and phone remain as secondary options on `/contact`. See decision log (ibe-marketing).
 - **R11** Phone number `(603) 521-2604` is a `tel:` link in the footer.
 - **R12** Footer includes credibility line: "ASHRAE board member · ACE Mentor of New Hampshire".
 - **R13** Footer includes Privacy and Terms links — placeholder pages or `# TODO` anchors flagged in the PR.

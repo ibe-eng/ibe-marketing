@@ -1,6 +1,8 @@
 // The one home for the "start a project" CTA target. Every "Talk to our engineers" /
 // "Start your project" button points here; `cta` names where on the site it was clicked.
-export const START_URL = 'https://toolbox.ibe.engineering/start';
+// Points at the public booking page (/b) until the toolbox's /start entry page ships; then
+// change this one line to 'https://toolbox.ibe.engineering/start'.
+export const START_URL = 'https://toolbox.ibe.engineering/b';
 
 export const startHref = (cta: string) => `${START_URL}?src=website&cta=${encodeURIComponent(cta)}`;
 
