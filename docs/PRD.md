@@ -83,7 +83,7 @@ The wordmark itself does work here: **INTEGRAT3D** = Integrated + 3D, which carr
 | 5 | **Why it works** | Outcomes, mixed across both legs | 4–6 outcome tiles: clash detection, faster schedules, coordinated 3D, permit-ready outputs, no Revit learning curve, used live in sales calls |
 | 6 | **Founder block** | Trust + mission | Portrait placeholder · 3–4 sentence story · ASHRAE board + ACE Mentor of NH credibility line |
 | 7 | **Closing CTA strip** | Last-chance conversion | "Plan Well. Build Well." tagline · same two CTAs · subtle red oval echo |
-| 8 | **Footer** | Contact + legal | `info@ibe.engineering` · `(603) 521-2604` · NH service area · Privacy · Terms · "© 2026 Integrated Building Engineering" |
+| 8 | **Footer** | Contact + legal | `info@ibe.engineering` · `(603) 834-7844` · NH service area · Privacy · Terms · "© 2026 Integrated Building Engineering" |
 
 ### Page 2 — `/toolbox`
 
@@ -226,7 +226,7 @@ ibe-marketing/
 - **R8** Logo files referenced from `public/images/` (white-red horiz on black header, black-red horiz wherever a light bg hosts the logo).
 - **R9** Header CTA "Open Toolbox" links to `https://toolbox.ibe.engineering`.
 - **R10** ~~Secondary CTA "Talk to our engineers" is a `mailto:info@ibe.engineering` link with a sensible default subject (`?subject=Project%20inquiry`).~~ **Superseded 2026-09-29:** every "Talk to our engineers" / "Start your project" CTA links to `https://toolbox.ibe.engineering/b?src=website&cta=<location>` (booking page, interim until the toolbox `/start` page ships; base URL in `src/lib/cta.ts`) and fires PostHog `cta_clicked` {cta, page, href} via one delegated `data-cta` listener in `Base.astro`. Email and phone remain as secondary options on `/contact`. See decision log (ibe-marketing).
-- **R11** Phone number `(603) 521-2604` is a `tel:` link in the footer.
+- **R11** Phone number `(603) 834-7844` is a `tel:` link in the footer.
 - **R12** Footer includes credibility line: "ASHRAE board member · ACE Mentor of New Hampshire".
 - **R13** Footer includes Privacy and Terms links — placeholder pages or `# TODO` anchors flagged in the PR.
 - **R14** `public/CNAME` contains `ibe.engineering`.

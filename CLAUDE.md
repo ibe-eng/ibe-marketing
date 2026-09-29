@@ -90,7 +90,7 @@ Copy should not assume the reader is an engineer. Avoid jargon-heavy lines like 
 - Founder/mission paragraph — compress to 3–4 sentences.
 - ASHRAE / ACE Mentor of NH involvement — keep as a credibility line in the footer or about block.
 - "Plan Well. Build Well." style tagline.
-- Email `info@ibe.engineering` (will replace `info@trw-design.com`) and phone `(603) 521-2604`.
+- Email `info@ibe.engineering` (will replace `info@trw-design.com`) and phone `(603) 834-7844`.
 - Privacy policy and Terms of Service links in footer.
 
 **Drop:**
