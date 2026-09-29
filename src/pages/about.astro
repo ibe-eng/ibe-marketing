@@ -14,14 +14,16 @@ import CtaStrip from '../components/CtaStrip.astro';
     <div class="container about-story">
       <div class="about-founder">
         <h1>About us</h1>
-        <Image
+        <div class="founder-portrait-frame">
+          <Image
           src={tylerPortrait}
           alt="Tyler Wilson, founder of Integrat3D Building Engineering"
           width={600}
           format="webp"
           loading="eager"
           class="founder-portrait"
-        />
+          />
+        </div>
       </div>
       <article>
         <h2>Raising the standard for coordinated, constructable system design.</h2>
@@ -55,7 +57,8 @@ import CtaStrip from '../components/CtaStrip.astro';
   .about-story { display: grid; grid-template-columns: 1fr 3fr; gap: var(--s-10); align-items: start; }
   .about-story h1 { font-size: clamp(2.5rem, 4vw, 3rem); line-height: var(--lh-tight); }
   .about-founder { display: grid; gap: var(--s-8); }
-  .founder-portrait { display: block; width: 100%; max-width: 320px; height: auto; border-radius: var(--radius-md); }
+  .founder-portrait-frame { width: 100%; max-width: 320px; overflow: hidden; border-radius: calc(var(--radius-md) * 3); }
+  .founder-portrait { display: block; width: 100%; height: auto; transform: scale(1.27); transform-origin: 50% 36%; }
   .about-story article { display: grid; gap: var(--s-6); }
   .about-story h2 { max-width: 34ch; }
   .about-story p { max-width: 75ch; color: var(--color-ink-muted); }
