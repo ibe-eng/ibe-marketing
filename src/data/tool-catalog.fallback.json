@@ -8,10 +8,15 @@
       "blurb": "Draw walls, doors, windows. Generate framing. Export to Revit.",
       "status": "live",
       "tier": "public",
-      "surfaces": ["toolbox", "aec-os"],
+      "surfaces": [
+        "toolbox",
+        "aec-os"
+      ],
       "group": "work",
       "web": "/projects?tool=floor-plan",
-      "repo": "ibe-floor-plan-builder"
+      "repo": "ibe-floor-plan-builder",
+      "availability": "active",
+      "retired": false
     },
     {
       "id": "project-builder",
@@ -19,10 +24,14 @@
       "blurb": "Set up rooms, levels, and scope. The shell every other tool runs on.",
       "status": "coming-soon",
       "tier": "team",
-      "surfaces": ["aec-os"],
+      "surfaces": [
+        "aec-os"
+      ],
       "group": "eng",
       "web": null,
-      "repo": "ibe-project-builder"
+      "repo": "ibe-project-builder",
+      "availability": "active",
+      "retired": true
     },
     {
       "id": "pdf-importer",
@@ -30,10 +39,15 @@
       "blurb": "Upload an existing plan set. Get a working model back.",
       "status": "live",
       "tier": "public",
-      "surfaces": ["toolbox", "aec-os"],
+      "surfaces": [
+        "toolbox",
+        "aec-os"
+      ],
       "group": "work",
       "web": "/projects?tool=pdf-importer",
-      "repo": "ibe-pdf-importer"
+      "repo": "ibe-pdf-importer",
+      "availability": "held",
+      "retired": false
     },
     {
       "id": "proposal-builder",
@@ -41,10 +55,14 @@
       "blurb": "Scope it, price it, send it.",
       "status": "live",
       "tier": "team",
-      "surfaces": ["aec-os"],
+      "surfaces": [
+        "aec-os"
+      ],
       "group": "biz",
       "web": "/projects?tool=proposal-builder",
-      "repo": "ibe-proposal-builder"
+      "repo": "ibe-proposal-builder",
+      "availability": "active",
+      "retired": false
     },
     {
       "id": "contam",
@@ -52,10 +70,14 @@
       "blurb": "Smoke-control modeling for high-rise residential.",
       "status": "roadmap",
       "tier": "team",
-      "surfaces": ["aec-os"],
+      "surfaces": [
+        "aec-os"
+      ],
       "group": "work",
       "web": null,
-      "repo": "ibe-contam-pipeline"
+      "repo": "ibe-contam-pipeline",
+      "availability": "held",
+      "retired": false
     },
     {
       "id": "submittal-to-family",
@@ -63,21 +85,30 @@
       "blurb": "Manufacturer PDF in. Revit family out.",
       "status": "live",
       "tier": "public",
-      "surfaces": ["toolbox", "aec-os"],
+      "surfaces": [
+        "toolbox",
+        "aec-os"
+      ],
       "group": "work",
       "web": "/projects?tool=submittal-to-family",
-      "repo": "ibe-submittal-to-family"
+      "repo": "ibe-submittal-to-family",
+      "availability": "held",
+      "retired": false
     },
     {
       "id": "energy-model",
       "name": "Calibrated Energy Model",
-      "blurb": "HVAKR loads + observed weather → calibrated kWh + $.",
+      "blurb": "HVAKR loads + observed weather \u2192 calibrated kWh + $.",
       "status": "live",
       "tier": "team",
-      "surfaces": ["aec-os"],
+      "surfaces": [
+        "aec-os"
+      ],
       "group": "work",
       "web": "/projects?tool=energy-model",
-      "repo": "ibe-energy-model"
+      "repo": "ibe-energy-model",
+      "availability": "dormant",
+      "retired": false
     },
     {
       "id": "smart-documents",
@@ -85,10 +116,15 @@
       "blurb": "Upload a plan set. It stays model-aware, versioned, and fast.",
       "status": "live",
       "tier": "public",
-      "surfaces": ["toolbox", "aec-os"],
+      "surfaces": [
+        "toolbox",
+        "aec-os"
+      ],
       "group": "work",
       "web": "/projects?tool=smart-documents",
-      "repo": null
+      "repo": null,
+      "availability": "active",
+      "retired": true
     },
     {
       "id": "focus",
@@ -96,10 +132,14 @@
       "blurb": "Schedule enforcement + activity tracking.",
       "status": "live",
       "tier": "team",
-      "surfaces": ["aec-os"],
+      "surfaces": [
+        "aec-os"
+      ],
       "group": "eng",
       "web": "/focus",
-      "repo": "ibe-focus"
+      "repo": "ibe-focus",
+      "availability": "side-project",
+      "retired": false
     }
   ]
 }
