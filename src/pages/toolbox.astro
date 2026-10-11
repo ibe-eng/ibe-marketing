@@ -13,7 +13,7 @@ const TOOLBOX_APP = 'https://toolbox.ibe.engineering';
 const catalog = await loadCatalog();
 
 // Marketing override (deliberate, per Tyler's 2026-06-17 walkthrough): on the
-// public site we advertise only Integrat3D Studio as "Live" today. The other
+// public site we advertise only Workbench as "Live" today. The other
 // public-tier tools are shown "Coming soon" until they're self-serve-ready —
 // even when the catalog marks them live — so a visitor never clicks into a tool
 // that isn't ready for them. To advertise another tool as live, add its id here.
@@ -31,7 +31,7 @@ const enrichment: Record<string, { body?: string; bullets?: string[] }> = {
     ],
   },
   'pdf-importer': {
-    body: 'Drop in an existing PDF plan set and get a parsed model back — walls, rooms, and dimensions ready to refine in Integrat3D Studio.',
+    body: 'Drop in an existing PDF plan set and get a parsed model back — walls, rooms, and dimensions ready to refine in Workbench.',
   },
   'submittal-to-family': {
     body: 'Upload a manufacturer submittal PDF and get a Revit family back — equipment geometry and parameters extracted for you.',
@@ -74,7 +74,7 @@ const faq = [
     a: 'No. The Toolbox speeds up modeling, coordination, and early-stage deliverables. Engineering judgment, code review, and stamped documents still require qualified professionals.',
   },
   {
-    q: 'What outputs does Integrat3D Studio generate?',
+    q: 'What outputs does Workbench generate?',
     a: 'Floor plans, framing layouts, PDF exports, 3D previews, and Revit-ready bundles — the deliverables a builder or coordinator actually hands off.',
   },
   {
@@ -116,7 +116,7 @@ const faq = [
   />
 
   {/* F30 (usability audit 2026-10-11): the "screenshot coming" placeholder is
-      gone. Add a section back here with a real, current Integrat3D Studio
+      gone. Add a section back here with a real, current Workbench
       screenshot in public/images when one is approved. */}
 
   <section class="section section--alt">
