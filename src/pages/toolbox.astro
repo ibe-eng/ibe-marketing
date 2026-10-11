@@ -115,14 +115,9 @@ const faq = [
     secondaryLabel="Talk to our engineers"
   />
 
-  <section class="section">
-    <div class="container">
-      {/* TODO(Tyler): replace with a real Integrat3D Studio screenshot in public/images. */}
-      <figure class="screenshot-ph" aria-label="Integrat3D Studio interface preview">
-        <span class="screenshot-ph__label">Integrat3D Studio — screenshot coming</span>
-      </figure>
-    </div>
-  </section>
+  {/* F30 (usability audit 2026-10-11): the "screenshot coming" placeholder is
+      gone. Add a section back here with a real, current Integrat3D Studio
+      screenshot in public/images when one is approved. */}
 
   <section class="section section--alt">
     <div class="container">
@@ -241,22 +236,7 @@ const faq = [
     max-width: 28ch;
   }
 
-  .screenshot-ph {
-    display: grid;
-    place-items: center;
-    aspect-ratio: 16 / 9;
-    width: 100%;
-    border: 1px dashed var(--color-rule);
-    border-radius: var(--radius-md);
-    background: var(--color-surface-alt);
-  }
 
-  .screenshot-ph__label {
-    font-size: var(--fs-small);
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    color: var(--color-ink-muted);
-  }
 
   .tools-grid {
     display: grid;
