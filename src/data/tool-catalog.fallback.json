@@ -4,7 +4,7 @@
   "tools": [
     {
       "id": "floor-plan",
-      "name": "Integrat3D Studio",
+      "name": "Workbench",
       "blurb": "Draw walls, doors, windows. Generate framing. Export to Revit.",
       "status": "live",
       "tier": "public",
