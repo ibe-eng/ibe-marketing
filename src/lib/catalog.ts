@@ -17,12 +17,18 @@ import fallback from '../data/tool-catalog.fallback.json';
 
 export type ToolStatus = 'live' | 'coming-soon' | 'roadmap';
 export type ToolTier = 'public' | 'team';
+/** Owner-scope availability (toolbox catalog, additive 2026-10-11, F13). */
+export type ToolAvailability = 'active' | 'held' | 'dormant' | 'side-project';
 
 export interface CatalogTool {
   id: string;
   name: string;
   blurb: string;
   status: ToolStatus;
+  /** Absent on older catalogs / the fallback snapshot — treat as 'active'. */
+  availability?: ToolAvailability;
+  /** Retired as a product entry (absent = false). */
+  retired?: boolean;
   tier: ToolTier;
   surfaces: string[];
   group: string;

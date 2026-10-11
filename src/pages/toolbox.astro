@@ -41,11 +41,23 @@ const enrichment: Record<string, { body?: string; bullets?: string[] }> = {
   },
 };
 
+// F13 (usability audit 2026-10-11): honest labels from the catalog's owner
+// scope. A held tool is "On hold", never "Coming soon"; Job Docs is in daily
+// use by IBE teams (capture, filing, markup) even though it is not self-serve.
+const IN_USE_BY_TEAMS = new Set(['smart-documents']);
+const statusFor = (t: CatalogTool, isLive: boolean): string => {
+  if (isLive) return 'Live';
+  if (t.availability === 'held') return 'On hold';
+  if (t.availability === 'dormant') return 'Dormant';
+  if (IN_USE_BY_TEAMS.has(t.id)) return 'In use by IBE teams';
+  return 'Coming soon';
+};
+
 const tileFor = (t: CatalogTool) => {
   const isLive = LIVE_ON_MARKETING.has(t.id);
   return {
-    title: t.name,
-    status: isLive ? 'Live' : 'Coming soon',
+    title: t.id === 'smart-documents' ? 'Job Docs' : t.name,
+    status: statusFor(t, isLive),
     body: enrichment[t.id]?.body ?? t.blurb,
     bullets: enrichment[t.id]?.bullets,
     ctaHref: isLive && t.web ? `${TOOLBOX_APP}${t.web}` : undefined,
