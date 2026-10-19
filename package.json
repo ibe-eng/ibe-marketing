@@ -11,6 +11,7 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@ibe-eng/brand-tokens": "^0.10.2",
     "astro": "^5.0.0",
     "posthog-js": "^1.372.10"
   }

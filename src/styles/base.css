@@ -1,3 +1,6 @@
+/* cap.scrollbar: the shared native scrollbar, with no palette changes. */
+@import "@ibe-eng/brand-tokens/scrollbars.css";
+
 /* Reset */
 *,
 *::before,
