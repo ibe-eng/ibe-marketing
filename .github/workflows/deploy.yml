@@ -12,6 +12,7 @@ on:
 
 permissions:
   contents: read
+  packages: read
   pages: write
   id-token: write
 
@@ -31,9 +32,13 @@ jobs:
         with:
           node-version: 20
           cache: npm
+          registry-url: https://npm.pkg.github.com
+          scope: "@ibe-eng"
 
       - name: Install dependencies
         run: npm ci || npm install
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NODE_AUTH_TOKEN || secrets.GITHUB_TOKEN }}
 
       - name: Build
         env:
